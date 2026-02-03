@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Gems | Gem City</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { --primary: #5ca357; --dark: #2d3436; --light: #f4f7f6; --white: #ffffff; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--dark); line-height: 1.6; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            background: var(--white); padding: 15px 5%;
+            display: flex; justify-content: space-between; align-items: center;
+            position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .back-btn {
+            text-decoration: none; color: var(--dark); font-weight: 700; font-size: 1.1rem;
+            display: flex; align-items: center; gap: 8px; transition: 0.3s;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .back-btn i { font-size: 1.2rem; color: var(--primary); transition: 0.3s; }
+        .back-btn:hover { color: var(--primary); }
+        .back-btn:hover i { transform: translateX(-5px); }
+
+        .nav-links { display: flex; list-style: none; }
+        .nav-links li { margin-left: 30px; }
+        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; transition: 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+
+        @media (max-width: 768px) {
+            nav { padding: 15px 20px; }
+            .nav-links { margin-left: auto; }
+            .mobile-hide { display: none; }
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/hero4.jpg');
+            background-size: cover; background-position: center;
+            padding: 80px 20px; text-align: center; color: white;
+        }
+        .page-header h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 5px; }
+
+        /* --- FILTER BUTTONS --- */
+        .filter-container {
+            text-align: center; margin: 40px 0 20px; padding: 0 20px;
+        }
+        .filter-btn {
+            background: white; border: 2px solid #ddd; color: var(--dark);
+            padding: 10px 20px; margin: 5px; border-radius: 30px;
+            font-weight: 600; cursor: pointer; transition: 0.3s;
+            font-family: 'Inter', sans-serif;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary); color: white; border-color: var(--primary);
+        }
+
+        /* Product Grid */
+        .container { width: 92%; max-width: 1200px; margin: auto; padding-bottom: 60px; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 30px; }
+
+        .product-card {
+            background: white; border-radius: 15px; overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; border: 1px solid #eee;
+        }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        
+        /* Hide class for filtering */
+        .product-card.hide { display: none; }
+        .product-card.show { display: block; animation: fadeIn 0.5s; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .img-container {
+            width: 100%; aspect-ratio: 1 / 1; 
+            overflow: hidden; cursor: pointer; position: relative; background: #f8f8f8;
+        }
+        .img-container img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
+        .img-container:hover img { transform: scale(1.05); }
+        .gallery-icon {
+            position: absolute; top: 15px; right: 15px;
+            background: rgba(0,0,0,0.6); color: white; padding: 8px 12px; border-radius: 20px;
+            font-size: 0.8rem; pointer-events: none;
+        }
+
+        .details { padding: 20px; text-align: center; }
+        .details h3 { font-size: 1.25rem; margin-bottom: 8px; font-weight: 700; }
+        .specs {
+            background: #f4f7f6; padding: 10px; border-radius: 8px;
+            margin-bottom: 15px; font-size: 0.95rem; color: #444;
+        }
+        .specs strong { color: var(--dark); font-weight: 700; }
+        .cert-tag { display: inline-block; background: #e8f5e9; color: var(--primary); font-size: 0.8rem; padding: 2px 8px; border-radius: 4px; font-weight: 600; margin-left: 5px; }
+
+        .buy-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: #25d366; color: white; padding: 10px 25px; border-radius: 50px;
+            text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: 0.3s;
+        }
+        .buy-btn:hover { background: #128c7e; }
+
+        /* --- LIGHTBOX (With Arrows) --- */
+        .lightbox {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.95); z-index: 2000;
+            display: none; flex-direction: column; justify-content: center; align-items: center;
+        }
+        .lightbox-main-area { 
+            position: relative; width: 90%; max-width: 800px; height: 60vh; 
+            display: flex; justify-content: center; align-items: center; margin-bottom: 20px; 
+        }
+        .lightbox-main-area img { 
+            max-width: 100%; max-height: 100%; border-radius: 5px; 
+            transition: opacity 0.3s ease; opacity: 1; 
+        }
+        .lb-arrow {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            color: white; font-size: 2.5rem; cursor: pointer; padding: 20px;
+            z-index: 2002; transition: 0.3s; opacity: 0.7; user-select: none;
+        }
+        .lb-arrow:hover { opacity: 1; color: var(--primary); }
+        .lb-prev { left: -60px; } .lb-next { right: -60px; }
+
+        .lightbox-thumbnails { display: flex; gap: 10px; overflow-x: auto; padding: 5px; max-width: 90%; }
+        .lightbox-thumb { width: 60px; height: 60px; object-fit: cover; cursor: pointer; border-radius: 5px; opacity: 0.5; border: 2px solid transparent; transition: 0.3s; }
+        .lightbox-thumb.active, .lightbox-thumb:hover { opacity: 1; border-color: var(--primary); }
+        .close-lightbox { position: absolute; top: 20px; right: 30px; color: white; font-size: 3rem; cursor: pointer; z-index: 2005; }
+
+        @media (max-width: 768px) {
+            .lb-arrow { display: none; } /* Arrows hidden on mobile */
+            .lightbox-main-area { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to City
+        </a>
+        <ul class="nav-links">
+            <li><a href="all-gems.html" class="active">Gems</a></li>
+            <li><a href="jewellery.html">Jewellery</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <h1>Ceylon Gem Collection</h1>
+        <p>Filter by Category to find your perfect stone</p>
+    </header>
+
+    <div class="filter-container">
+        <button class="filter-btn active" onclick="filterGems('all')">All</button>
+        <button class="filter-btn" onclick="filterGems('blue-sapphire')">Blue Sapphires</button>
+        <button class="filter-btn" onclick="filterGems('ruby')">Rubies</button>
+        <button class="filter-btn" onclick="filterGems('yellow-sapphire')">Yellow Sapphires</button>
+    </div>
+
+    <div class="container">
+        <div class="product-grid">
+            
+            <div class="product-card" data-category="blue-sapphire">
+                <div class="img-container" onclick="openGallery(this)" 
+                     data-images='["images/gem1.jpg", "images/gem1-side.jpg", "images/gem1-cert.jpg"]'>
+                    <img src="images/gem1.jpg" alt="Blue Sapphire">
+                    <div class="gallery-icon"><i class="fas fa-images"></i> 3 Photos</div>
+                </div>
+                <div class="details">
+                    <h3>Royal Blue Sapphire</h3>
+                    <div class="specs">Weight: <strong>2.55 Ct</strong> <br>Shape: <strong>Oval</strong> <span class="cert-tag">GIA Cert</span></div>
+                    <a href="https://wa.me/947XXXXXXXXX" class="buy-btn"><i class="fab fa-whatsapp"></i> Check Price</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="ruby">
+                <div class="img-container" onclick="openGallery(this)" 
+                     data-images='["images/gem2.jpg", "images/gem2-side.jpg", "images/gem2-cert.jpg"]'>
+                    <img src="images/gem2.jpg" alt="Ruby">
+                    <div class="gallery-icon"><i class="fas fa-images"></i> 3 Photos</div>
+                </div>
+                <div class="details">
+                    <h3>Pigeon Blood Ruby</h3>
+                    <div class="specs">Weight: <strong>1.80 Ct</strong> <br>Shape: <strong>Cushion</strong> <span class="cert-tag">GRS Cert</span></div>
+                    <a href="https://wa.me/947XXXXXXXXX" class="buy-btn"><i class="fab fa-whatsapp"></i> Check Price</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="yellow-sapphire">
+                <div class="img-container" onclick="openGallery(this)" 
+                     data-images='["images/gem3.jpg", "images/gem3-side.jpg", "images/gem3-cert.jpg"]'>
+                    <img src="images/gem3.jpg" alt="Yellow Sapphire">
+                    <div class="gallery-icon"><i class="fas fa-images"></i> 3 Photos</div>
+                </div>
+                <div class="details">
+                    <h3>Yellow Sapphire</h3>
+                    <div class="specs">Weight: <strong>3.10 Ct</strong> <br>Shape: <strong>Round</strong> <span class="cert-tag">NGJA Cert</span></div>
+                    <a href="https://wa.me/947XXXXXXXXX" class="buy-btn"><i class="fab fa-whatsapp"></i> Check Price</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="lightbox" id="gallery-lightbox">
+        <span class="close-lightbox" onclick="closeGallery()">&times;</span>
+        <div class="lightbox-main-area">
+            <i class="fas fa-chevron-left lb-arrow lb-prev" onclick="prevImage(event)"></i>
+            <img id="main-gallery-img" src="">
+            <i class="fas fa-chevron-right lb-arrow lb-next" onclick="nextImage(event)"></i>
+        </div>
+        <div class="lightbox-thumbnails" id="gallery-thumbs"></div>
+    </div>
+
+    <script>
+        // --- FILTER SCRIPT ---
+        function filterGems(category) {
+            const cards = document.querySelectorAll('.product-card');
+            const btns = document.querySelectorAll('.filter-btn');
+
+            // Button Active State
+            btns.forEach(btn => {
+                if (btn.textContent.toLowerCase().includes(category.replace('-', ' ')) || (category === 'all' && btn.textContent === 'All')) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // Show/Hide Cards
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                if (category === 'all' || cardCategory === category) {
+                    card.classList.remove('hide');
+                    card.classList.add('show');
+                } else {
+                    card.classList.remove('show');
+                    card.classList.add('hide');
+                }
+            });
+        }
+
+        // --- LIGHTBOX SCRIPT ---
+        const lightbox = document.getElementById('gallery-lightbox');
+        const mainImg = document.getElementById('main-gallery-img');
+        const thumbsContainer = document.getElementById('gallery-thumbs');
+        let currentImages = [];
+        let currentIndex = 0;
+
+        function openGallery(element) {
+            currentImages = JSON.parse(element.getAttribute('data-images'));
+            currentIndex = 0;
+            if (currentImages.length > 0) {
+                updateLightbox();
+                lightbox.style.display = 'flex';
+            }
+        }
+        function closeGallery() { lightbox.style.display = 'none'; }
+        
+        function updateLightbox() {
+            mainImg.style.opacity = '0.5';
+            setTimeout(() => {
+                mainImg.src = currentImages[currentIndex];
+                mainImg.style.opacity = '1';
+                thumbsContainer.innerHTML = '';
+                currentImages.forEach((imgSrc, index) => {
+                    const thumb = document.createElement('img');
+                    thumb.src = imgSrc;
+                    thumb.classList.add('lightbox-thumb');
+                    if (index === currentIndex) thumb.classList.add('active');
+                    thumb.onclick = (e) => { e.stopPropagation(); currentIndex = index; updateLightbox(); };
+                    thumbsContainer.appendChild(thumb);
+                });
+            }, 150);
+        }
+
+        function nextImage(e) { if(e) e.stopPropagation(); currentIndex = (currentIndex + 1) % currentImages.length; updateLightbox(); }
+        function prevImage(e) { if(e) e.stopPropagation(); currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length; updateLightbox(); }
+
+        let touchStartX = 0; let touchEndX = 0;
+        const mainArea = document.querySelector('.lightbox-main-area');
+        mainArea.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; });
+        mainArea.addEventListener('touchend', e => { touchEndX = e.changedTouches[0].screenX; handleSwipe(); });
+        function handleSwipe() { if (touchEndX < touchStartX - 50) nextImage(); if (touchEndX > touchStartX + 50) prevImage(); }
+        lightbox.addEventListener('click', (e) => { if (e.target === lightbox || e.target.classList.contains('lightbox-main-area')) closeGallery(); });
+    </script>
+</body>
+</html>
