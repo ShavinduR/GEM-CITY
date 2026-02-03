@@ -290,5 +290,26 @@
         function handleSwipe() { if (touchEndX < touchStartX - 50) nextImage(); if (touchEndX > touchStartX + 50) prevImage(); }
         lightbox.addEventListener('click', (e) => { if (e.target === lightbox || e.target.classList.contains('lightbox-main-area')) closeGallery(); });
     </script>
+    <script>
+    // හැම Product Card එකක්ම හොයාගන්න
+    document.querySelectorAll('.product-card').forEach(card => {
+        
+        // ඒ කාඩ් එකේ තියෙන නම (h3) හොයාගන්න
+        const productName = card.querySelector('h3').innerText;
+        
+        // ඒ කාඩ් එකේ තියෙන Button එක හොයාගන්න
+        const whatsappBtn = card.querySelector('.buy-btn');
+        
+        // පණිවිඩය හදන්න
+        const message = `Hello, I am interested in the ${productName}. Please let me know the price.`;
+        
+        // WhatsApp Link එක අප්ඩේට් කරන්න (Space වෙනුවට අකුරු මාරු කිරීම)
+        const encodedMessage = encodeURIComponent(message);
+        
+        // ඔයාගේ නම්බර් එක මෙතන තියෙනවා (94711098429)
+        whatsappBtn.href = `https://wa.me/94711098429?text=${encodedMessage}`;
+    });
+</script>
 </body>
+
 </html>
