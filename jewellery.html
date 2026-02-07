@@ -3,107 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jewellery Collection | Gem City</title>
+    <title>Fine Jewellery Collection | Gem City</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
-        :root { --primary: #5ca357; --dark: #2d3436; --light: #f4f7f6; --white: #ffffff; }
+        /* --- LUXURY DARK THEME STYLES --- */
+        :root { 
+            --primary: #c1a35f; 
+            --dark: #0a0a0a; 
+            --dark-gray: #1a1a1a;
+            --light: #f5f5f5; 
+            --white: #ffffff; 
+            --text-gray: #b3b3b3;
+        }
+        
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--dark); line-height: 1.6; }
+        body { font-family: 'Inter', sans-serif; background: var(--dark); color: var(--white); line-height: 1.6; }
 
         /* Navigation */
-        nav { background: var(--white); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .back-btn { text-decoration: none; color: var(--dark); font-weight: 700; font-size: 1.1rem; display: flex; align-items: center; gap: 8px; transition: 0.3s; text-transform: uppercase; letter-spacing: 0.5px; }
-        .back-btn i { font-size: 1.2rem; color: var(--primary); transition: 0.3s; }
-        .back-btn:hover { color: var(--primary); }
-        .back-btn:hover i { transform: translateX(-5px); }
+        nav {
+            background: rgba(10, 10, 10, 0.95); padding: 20px 5%;
+            display: flex; justify-content: space-between; align-items: center;
+            position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--white); text-decoration: none; display: flex; align-items: center; gap: 10px; letter-spacing: 1px; }
+        .nav-logo span { color: var(--primary); }
         .nav-links { display: flex; list-style: none; }
-        .nav-links li { margin-left: 30px; }
-        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; transition: 0.3s; }
+        .nav-links li { margin-left: 35px; }
+        .nav-links a { text-decoration: none; color: var(--light); font-weight: 500; transition: 0.3s; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
         .nav-links a:hover, .nav-links a.active { color: var(--primary); }
-        
-        @media (max-width: 768px) { nav { padding: 15px 20px; } .nav-links { margin-left: auto; } .mobile-hide { display: none; } }
 
-        /* Header */
+        @media (max-width: 768px) { .nav-links { display: none; } }
+
+        /* --- PAGE HEADER --- */
         .page-header {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/jewel-bg.jpg');
+            /* Using the jewellery background image with dark overlay */
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('images/jewel-bg.jpg');
             background-size: cover; background-position: center;
-            padding: 80px 20px; text-align: center; color: white;
+            padding: 100px 20px; text-align: center; color: white;
+            border-bottom: 1px solid #333;
         }
-        .page-header h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 5px; }
+        .page-header h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 10px; color: var(--primary); }
+        .page-header p { font-size: 1.1rem; color: #ddd; max-width: 600px; margin: auto; }
 
-        /* --- FILTER BUTTONS STYLE --- */
-        .filter-container {
-            text-align: center; margin: 40px 0 20px; padding: 0 20px;
-        }
+        /* --- FILTER BUTTONS --- */
+        .filter-container { text-align: center; margin: 50px 0 30px; padding: 0 20px; }
         .filter-btn {
-            background: white; border: 2px solid #ddd; color: var(--dark);
-            padding: 10px 20px; margin: 5px; border-radius: 30px;
-            font-weight: 600; cursor: pointer; transition: 0.3s;
-            font-family: 'Inter', sans-serif;
+            background: transparent; border: 1px solid #444; color: #aaa;
+            padding: 10px 25px; margin: 5px; border-radius: 2px;
+            font-weight: 500; cursor: pointer; transition: 0.3s;
+            font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;
         }
         .filter-btn:hover, .filter-btn.active {
-            background: var(--primary); color: white; border-color: var(--primary);
+            background: var(--primary); color: #000; border-color: var(--primary);
         }
 
-        /* Product Grid */
-        .container { width: 92%; max-width: 1200px; margin: auto; padding-bottom: 60px; }
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 30px; }
-        
-        .product-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; border: 1px solid #eee; }
-        .product-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        /* --- PRODUCT GRID --- */
+        .container { width: 92%; max-width: 1200px; margin: auto; padding-bottom: 80px; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 40px; }
 
+        .product-card {
+            background: #111; border: 1px solid #222; border-radius: 5px; overflow: hidden;
+            transition: 0.3s; position: relative;
+        }
+        .product-card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        
         /* Hide/Show Logic */
         .product-card.hide { display: none; }
         .product-card.show { display: block; animation: fadeIn 0.5s; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        .img-container { width: 100%; aspect-ratio: 1 / 1; overflow: hidden; cursor: pointer; position: relative; background: #f8f8f8; }
-        .img-container img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
-        .img-container:hover img { transform: scale(1.05); }
-        .gallery-icon { position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.6); color: white; padding: 8px 12px; border-radius: 20px; font-size: 0.8rem; pointer-events: none; }
+        .img-container {
+            width: 100%; aspect-ratio: 1 / 1; 
+            overflow: hidden; cursor: pointer; position: relative;
+        }
+        .img-container img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .img-container:hover img { transform: scale(1.1); }
+        
+        .gallery-icon {
+            position: absolute; top: 15px; right: 15px;
+            background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 3px;
+            font-size: 0.75rem; pointer-events: none; text-transform: uppercase; letter-spacing: 1px;
+        }
 
-        .details { padding: 20px; text-align: center; }
-        .details h3 { font-size: 1.25rem; margin-bottom: 8px; font-weight: 700; }
-        .specs { background: #f4f7f6; padding: 10px; border-radius: 8px; margin-bottom: 15px; font-size: 0.95rem; color: #444; }
-        .specs strong { color: var(--dark); font-weight: 700; }
-        .buy-btn { display: inline-flex; align-items: center; gap: 8px; background: #25d366; color: white; padding: 10px 25px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: 0.3s; }
+        .details { padding: 25px; text-align: center; }
+        .details h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 10px; color: #fff; }
+        
+        .specs {
+            display: flex; justify-content: center; gap: 15px;
+            font-size: 0.85rem; color: #888; margin-bottom: 20px; border-bottom: 1px solid #222; padding-bottom: 15px;
+        }
+        .specs span { display: flex; flex-direction: column; line-height: 1.3; }
+        .specs strong { color: var(--primary); font-weight: 600; }
+
+        .buy-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: #25d366; color: white; padding: 12px 30px; border-radius: 2px;
+            text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s;
+            text-transform: uppercase; letter-spacing: 0.5px; width: 100%; justify-content: center;
+        }
         .buy-btn:hover { background: #128c7e; }
 
-        /* Lightbox CSS */
-        .lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.95); z-index: 2000; display: none; flex-direction: column; justify-content: center; align-items: center; }
-        .lightbox-main-area { position: relative; width: 90%; max-width: 800px; height: 60vh; display: flex; justify-content: center; align-items: center; margin-bottom: 20px; }
-        .lightbox-main-area img { max-width: 100%; max-height: 100%; border-radius: 5px; transition: opacity 0.3s ease; opacity: 1; }
-        
-        .lb-arrow { position: absolute; top: 50%; transform: translateY(-50%); color: white; font-size: 2.5rem; cursor: pointer; padding: 20px; z-index: 2002; transition: 0.3s; opacity: 0.7; user-select: none; }
+        /* --- LIGHTBOX --- */
+        .lightbox {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.95); z-index: 2000;
+            display: none; flex-direction: column; justify-content: center; align-items: center;
+        }
+        .lightbox-main-area { 
+            position: relative; width: 90%; max-width: 800px; height: 60vh; 
+            display: flex; justify-content: center; align-items: center; margin-bottom: 20px; 
+        }
+        .lightbox-main-area img { 
+            max-width: 100%; max-height: 100%; border: 1px solid #333; 
+            transition: opacity 0.3s ease; opacity: 1; 
+        }
+        .lb-arrow {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            color: white; font-size: 2.5rem; cursor: pointer; padding: 20px;
+            z-index: 2002; transition: 0.3s; opacity: 0.7; user-select: none;
+        }
         .lb-arrow:hover { opacity: 1; color: var(--primary); }
         .lb-prev { left: -60px; } .lb-next { right: -60px; }
-
+        .close-lightbox { position: absolute; top: 20px; right: 30px; color: white; font-size: 3rem; cursor: pointer; z-index: 2005; }
         .lightbox-thumbnails { display: flex; gap: 10px; overflow-x: auto; padding: 5px; max-width: 90%; }
-        .lightbox-thumb { width: 60px; height: 60px; object-fit: cover; cursor: pointer; border-radius: 5px; opacity: 0.5; border: 2px solid transparent; transition: 0.3s; }
-        .lightbox-thumb.active, .lightbox-thumb:hover { opacity: 1; border-color: var(--primary); }
-        .close-lightbox { position: absolute; top: 20px; right: 30px; color: white; font-size: 3rem; cursor: pointer; }
+        .lightbox-thumb { width: 60px; height: 60px; object-fit: cover; cursor: pointer; border: 2px solid transparent; opacity: 0.5; transition: 0.3s; }
+        .lightbox-thumb.active { opacity: 1; border-color: var(--primary); }
 
-        @media (max-width: 768px) { .lb-arrow { display: none; } .lightbox-main-area { width: 100%; } }
+        /* --- FOOTER STYLES (MATCHING HOME) --- */
+        footer { background: #050505; color: #a0a0a0; padding-top: 70px; border-top: 1px solid #222; font-family: 'Inter', sans-serif; font-size: 0.95rem; }
+        .footer-grid { max-width: 1200px; margin: auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; padding-bottom: 50px; }
+        .footer-heading { color: #fff; font-family: 'Playfair Display', serif; letter-spacing: 1px; margin-bottom: 25px; text-transform: uppercase; font-size: 1.1rem; }
+        .footer-link { color: #a0a0a0; text-decoration: none; display: flex; align-items: center; gap: 10px; transition: 0.3s; margin-bottom: 12px; }
+        .footer-link:hover { color: var(--primary); transform: translateX(5px); }
+        .footer-icon { color: var(--primary); width: 20px; text-align: center; }
+
+        @media (max-width: 768px) { .lb-arrow { display: none; } }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="index.html" class="back-btn">
-            <i class="fas fa-arrow-left"></i> Back to City
-        </a>
+        <a href="index.html" class="nav-logo"><i class="far fa-gem"></i> GEM <span>CITY</span></a>
         <ul class="nav-links">
-            <li><a href="all-gems.html">Gems</a></li>
+            <li><a href="all-gems.html">Collections</a></li>
             <li><a href="jewellery.html" class="active">Jewellery</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
         </ul>
     </nav>
 
     <header class="page-header">
-        <h1>Fine Jewellery</h1>
-        <p>Handcrafted Gold & Silver Designs</p>
+        <h1>Handcrafted Jewellery</h1>
+        <p>Exquisite Gold & Silver designs embedded with precious Ceylon stones.</p>
     </header>
 
     <div class="filter-container">
@@ -111,7 +164,7 @@
         <button class="filter-btn" onclick="filterItems('rings')">Rings</button>
         <button class="filter-btn" onclick="filterItems('earrings')">Earrings</button>
         <button class="filter-btn" onclick="filterItems('pendant')">Pendants</button>
-        <button class="filter-btn" onclick="filterItems('nawarathna')">Nawarathna Rings</button>
+        <button class="filter-btn" onclick="filterItems('nawarathna')">Nawarathna</button>
     </div>
 
     <div class="container">
@@ -120,52 +173,68 @@
             <div class="product-card" data-category="rings">
                 <div class="img-container" onclick="openGallery(this)" 
                      data-images='["images/ring1.jpg", "images/ring1-side.jpg", "images/ring1-box.jpg"]'>
-                    <img src="images/ring1.jpg" alt="Ring">
-                    <div class="gallery-icon"><i class="fas fa-images"></i> 3 Photos</div>
+                    <img src="images/ring1.jpg" alt="Blue Sapphire Ring">
+                    <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
                 </div>
                 <div class="details">
                     <h3>Blue Sapphire Ring</h3>
-                    <div class="specs">Metal: <strong>18K Gold</strong> <br>Gem: <strong>1.5ct Sapphire</strong></div>
-                    <a href="https://wa.me/94711098429" class="buy-btn"><i class="fab fa-whatsapp"></i> Inquire</a>
+                    <div class="specs">
+                        <span>Metal<br><strong>18K Gold</strong></span>
+                        <span>Gem<br><strong>Sapphire</strong></span>
+                        <span>Weight<br><strong>1.5ct</strong></span>
+                    </div>
+                    <a href="#" class="buy-btn"><i class="fab fa-whatsapp"></i> Inquire Price</a>
                 </div>
             </div>
 
             <div class="product-card" data-category="pendant">
                 <div class="img-container" onclick="openGallery(this)" 
                      data-images='["images/necklace1.jpg", "images/necklace1-detail.jpg", "images/necklace1-wear.jpg"]'>
-                    <img src="images/necklace1.jpg" alt="Pendant">
-                    <div class="gallery-icon"><i class="fas fa-images"></i> 3 Photos</div>
+                    <img src="images/necklace1.jpg" alt="Ruby Heart Pendant">
+                    <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
                 </div>
                 <div class="details">
                     <h3>Ruby Heart Pendant</h3>
-                    <div class="specs">Metal: <strong>Sterling Silver</strong> <br>Gem: <strong>Mixed Stones</strong></div>
-                    <a href="https://wa.me/94711098429" class="buy-btn"><i class="fab fa-whatsapp"></i> Inquire</a>
+                    <div class="specs">
+                        <span>Metal<br><strong>Silver</strong></span>
+                        <span>Gem<br><strong>Ruby</strong></span>
+                        <span>Design<br><strong>Modern</strong></span>
+                    </div>
+                    <a href="#" class="buy-btn"><i class="fab fa-whatsapp"></i> Inquire Price</a>
                 </div>
             </div>
 
             <div class="product-card" data-category="earrings">
                 <div class="img-container" onclick="openGallery(this)" 
                      data-images='["images/earring1.jpg", "images/earring1-side.jpg", "images/earring1-box.jpg"]'>
-                    <img src="images/earring1.jpg" alt="Earrings">
-                    <div class="gallery-icon"><i class="fas fa-images"></i> 3 Photos</div>
+                    <img src="images/earring1.jpg" alt="Gemstone Earrings">
+                    <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
                 </div>
                 <div class="details">
-                    <h3>Gemstone Earrings</h3>
-                    <div class="specs">Metal: <strong>Rose Gold</strong> <br>Gem: <strong>Green Emerald</strong></div>
-                    <a href="https://wa.me/94711098429" class="buy-btn"><i class="fab fa-whatsapp"></i> Inquire</a>
+                    <h3>Emerald Earrings</h3>
+                    <div class="specs">
+                        <span>Metal<br><strong>Rose Gold</strong></span>
+                        <span>Gem<br><strong>Emerald</strong></span>
+                        <span>Style<br><strong>Studs</strong></span>
+                    </div>
+                    <a href="#" class="buy-btn"><i class="fab fa-whatsapp"></i> Inquire Price</a>
                 </div>
             </div>
 
             <div class="product-card" data-category="nawarathna">
                 <div class="img-container" onclick="openGallery(this)" 
                      data-images='["images/nawa1.jpg", "images/nawa1-side.jpg", "images/nawa1-box.jpg"]'>
-                    <img src="images/nawa1.jpg" alt="Nawarathna">
-                    <div class="gallery-icon"><i class="fas fa-images"></i> 3 Photos</div>
+                    <img src="images/nawa1.jpg" alt="Classic Nawarathna">
+                    <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
                 </div>
                 <div class="details">
                     <h3>Classic Nawarathna</h3>
-                    <div class="specs">Metal: <strong>22K Gold</strong> <br>Gem: <strong>9 Auspicious Stones</strong></div>
-                    <a href="https://wa.me/94711098429" class="buy-btn"><i class="fab fa-whatsapp"></i> Inquire</a>
+                    <div class="specs">
+                        <span>Metal<br><strong>22K Gold</strong></span>
+                        <span>Stones<br><strong>9 Gems</strong></span>
+                        <span>Type<br><strong>Custom</strong></span>
+                    </div>
+                    <a href="#" class="buy-btn"><i class="fab fa-whatsapp"></i> Inquire Price</a>
                 </div>
             </div>
 
@@ -182,25 +251,75 @@
         <div class="lightbox-thumbnails" id="gallery-thumbs"></div>
     </div>
 
+    <footer>
+        <div class="footer-grid">
+            
+            <div>
+                <h4 class="footer-heading">Meet the Founder</h4>
+                
+                <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 20px;">
+                    <img src="images/me.png" alt="Founder" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #c1a35f;">
+                    <div>
+                        <h5 style="color: #fff; font-size: 1.1rem; margin-bottom: 5px;">Your Name</h5>
+                        <p style="font-size: 0.85rem; color: #c1a35f; font-style: italic;">Gemologist & Founder</p>
+                    </div>
+                </div>
+                
+                <p style="line-height: 1.6; margin-bottom: 20px;">
+                    "We don't just sell gems; we share the heritage of Ceylon. Every stone is handpicked from the mines of Ratnapura."
+                </p>
+                
+                <div style="display: flex; gap: 10px;">
+                    <a href="#" style="width: 35px; height: 35px; background: #222; color: #fff; display: flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; transition: 0.3s;"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" style="width: 35px; height: 35px; background: #222; color: #fff; display: flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; transition: 0.3s;"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="footer-heading">Customer Promise</h4>
+                <div style="display: flex; flex-direction: column;">
+                    <a href="#" class="footer-link"><i class="fas fa-undo footer-icon"></i> 14-Day Money Back Guarantee</a>
+                    <a href="#" class="footer-link"><i class="fas fa-shipping-fast footer-icon"></i> Worldwide Insured Shipping</a>
+                    <a href="#" class="footer-link"><i class="fas fa-certificate footer-icon"></i> GIA/NGJA Authenticity Reports</a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="footer-heading">Contact Us</h4>
+                <div style="margin-bottom: 20px;">
+                    <p><i class="fas fa-envelope footer-icon"></i> sales@gemcity.lk</p><br>
+                    <p><i class="fas fa-phone footer-icon"></i> +94 71 109 8429</p>
+                </div>
+                <div style="background: #111; padding: 15px; border-radius: 5px; border: 1px solid #333;">
+                    <p style="color: #fff; margin-bottom: 10px; font-size: 0.9rem;">Join exclusive list:</p>
+                    <form style="display: flex; gap: 5px;">
+                        <input type="email" placeholder="Email" style="background: #222; border: 1px solid #444; padding: 8px; color: #fff; width: 100%; border-radius: 2px; outline: none;">
+                        <button type="submit" style="background: var(--primary); color: #000; border: none; padding: 8px 15px; font-weight: bold; cursor: pointer;">JOIN</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div style="border-top: 1px solid #222; background: #000; padding: 20px 0; text-align: center;">
+            <p style="font-size: 0.85rem;">&copy; 2026 Gem City. All Rights Reserved.</p>
+        </div>
+    </footer>
+
     <script>
-        // --- FILTER FUNCTION ---
+        // --- FILTER SCRIPT ---
         function filterItems(category) {
             const cards = document.querySelectorAll('.product-card');
             const btns = document.querySelectorAll('.filter-btn');
 
-            // Button Active Logic
             btns.forEach(btn => {
                 const btnText = btn.textContent.toLowerCase();
-                if (category === 'all' && btnText === 'all') {
-                    btn.classList.add('active');
-                } else if (btnText.includes(category)) { // Matches 'rings', 'pendant', 'nawarathna'
+                if (btnText.includes(category) || (category === 'all' && btnText === 'all')) {
                     btn.classList.add('active');
                 } else {
                     btn.classList.remove('active');
                 }
             });
 
-            // Card Hide/Show Logic
             cards.forEach(card => {
                 const cardCat = card.getAttribute('data-category');
                 if (category === 'all' || cardCat === category) {
@@ -223,7 +342,7 @@
         function openGallery(element) {
             currentImages = JSON.parse(element.getAttribute('data-images'));
             currentIndex = 0;
-            if(currentImages.length > 0) {
+            if (currentImages.length > 0) {
                 updateLightbox();
                 lightbox.style.display = 'flex';
             }
@@ -240,7 +359,7 @@
                     const thumb = document.createElement('img');
                     thumb.src = imgSrc;
                     thumb.classList.add('lightbox-thumb');
-                    if(index === currentIndex) thumb.classList.add('active');
+                    if (index === currentIndex) thumb.classList.add('active');
                     thumb.onclick = (e) => { e.stopPropagation(); currentIndex = index; updateLightbox(); };
                     thumbsContainer.appendChild(thumb);
                 });
@@ -250,33 +369,17 @@
         function nextImage(e) { if(e) e.stopPropagation(); currentIndex = (currentIndex + 1) % currentImages.length; updateLightbox(); }
         function prevImage(e) { if(e) e.stopPropagation(); currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length; updateLightbox(); }
 
-        let touchStartX = 0; let touchEndX = 0;
-        const mainArea = document.querySelector('.lightbox-main-area');
-        mainArea.addEventListener('touchstart', e => touchStartX = e.changedTouches[0].screenX);
-        mainArea.addEventListener('touchend', e => { touchEndX = e.changedTouches[0].screenX; handleSwipe(); });
-        function handleSwipe() { if(touchEndX < touchStartX - 50) nextImage(); if(touchEndX > touchStartX + 50) prevImage(); }
         lightbox.addEventListener('click', (e) => { if (e.target === lightbox || e.target.classList.contains('lightbox-main-area')) closeGallery(); });
-    </script>
-    <script>
-    // හැම Product Card එකක්ම හොයාගන්න
-    document.querySelectorAll('.product-card').forEach(card => {
-        
-        // ඒ කාඩ් එකේ තියෙන නම (h3) හොයාගන්න
-        const productName = card.querySelector('h3').innerText;
-        
-        // ඒ කාඩ් එකේ තියෙන Button එක හොයාගන්න
-        const whatsappBtn = card.querySelector('.buy-btn');
-        
-        // පණිවිඩය හදන්න
-        const message = `Hello, I am interested in the ${productName}. Please let me know the price.`;
-        
-        // WhatsApp Link එක අප්ඩේට් කරන්න (Space වෙනුවට අකුරු මාරු කිරීම)
-        const encodedMessage = encodeURIComponent(message);
-        
-        // ඔයාගේ නම්බර් එක මෙතන තියෙනවා (94711098429)
-        whatsappBtn.href = `https://wa.me/94711098429?text=${encodedMessage}`;
-    });
-</script>
-</body>
 
+        // --- WHATSAPP DYNAMIC LINK ---
+        document.querySelectorAll('.product-card').forEach(card => {
+            const productName = card.querySelector('h3').innerText;
+            const whatsappBtn = card.querySelector('.buy-btn');
+            const message = `Hello, I am interested in the ${productName} (Jewellery) listed on your website. Please let me know the price.`;
+            const encodedMessage = encodeURIComponent(message);
+            whatsappBtn.href = `https://wa.me/94711098429?text=${encodedMessage}`;
+            whatsappBtn.target = "_blank";
+        });
+    </script>
+</body>
 </html>
