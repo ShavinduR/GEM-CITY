@@ -1,286 +1,1155 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fine Jewellery Collection | Gem City</title>
-    
+    <title>Handcrafted Fine Jewellery | Gold & Silver with Ceylon Gems | FACET</title>
+    <meta name="title" content="Handcrafted Fine Jewellery | Gold & Silver with Ceylon Gems | FACET">
+    <meta name="description"
+        content="Discover our exquisite collection of handcrafted 18K gold and silver rings, pendants, and earrings embedded with precious Ceylon gemstones at FACET.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gemcity.lk/jewellery.html">
+    <meta property="og:title" content="Handcrafted Fine Jewellery | FACET">
+    <meta property="og:description"
+        content="Exquisite Gold & Silver designs embedded with precious Ceylon stones. View our custom rings and pendants.">
+    <meta property="og:image" content="https://gemcity.lk/images/jewelleryw/jewelery crafting.jpg">
+
+    <link rel="icon" href="images/logoicon/faviconfacet.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <style>
-        /* --- LUXURY DARK THEME STYLES --- */
-        :root { 
-            --primary: #c1a35f; 
-            --dark: #0a0a0a; 
-            --dark-gray: #1a1a1a;
-            --light: #f5f5f5; 
-            --white: #ffffff; 
-            --text-gray: #b3b3b3;
-        }
-        
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Inter', sans-serif; background: var(--dark); color: var(--white); line-height: 1.6; }
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 
-        /* Navigation */
-        nav {
-            background: rgba(10, 10, 10, 0.95); padding: 20px 5%;
-            display: flex; justify-content: space-between; align-items: center;
-            position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1);
+    <!-- Task 3: JSON-LD Product Schema for Jewellery -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Handcrafted Jewellery Collection",
+      "url": "https://gemcity.lk/jewellery.html",
+      "description": "Exquisite handcrafted gold and silver rings, pendants, and earrings embedded with precious Ceylon gemstones by FACET.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Product",
+            "name": "Blue Sapphire Ring",
+            "brand": { "@type": "Brand", "name": "FACET" },
+            "description": "18K Gold Ring set with a 1.5ct natural Ceylon Blue Sapphire. Adjustable sizing.",
+            "image": "https://gemcity.lk/images/jewelleryw/ring1.webp",
+            "material": "18K Gold",
+            "offers": { "@type": "Offer", "priceCurrency": "LKR", "price": "450000", "availability": "https://schema.org/InStock" },
+            "hasCertification": { "@type": "Certification", "name": "GIA/NGJA" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Product",
+            "name": "Premium Collection Jewellery",
+            "brand": { "@type": "Brand", "name": "FACET" },
+            "description": "Custom handcrafted jewellery set with Ceylon gemstones.",
+            "offers": { "@type": "Offer", "priceCurrency": "LKR", "price": "240000", "availability": "https://schema.org/InStock" },
+            "hasCertification": { "@type": "Certification", "name": "GIA/NGJA" }
+          }
         }
-        .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--white); text-decoration: none; display: flex; align-items: center; gap: 10px; letter-spacing: 1px; }
-        .nav-logo span { color: var(--primary); }
-        .nav-links { display: flex; list-style: none; }
-        .nav-links li { margin-left: 35px; }
-        .nav-links a { text-decoration: none; color: var(--light); font-weight: 500; transition: 0.3s; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
-        .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+      ]
+    }
+    </script>
 
-        @media (max-width: 768px) { .nav-links { display: none; } }
-
-        /* --- PAGE HEADER --- */
-        .page-header {
-            /* Using the jewellery background image with dark overlay */
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('images/jewel-bg.jpg');
-            background-size: cover; background-position: center;
-            padding: 100px 20px; text-align: center; color: white;
-            border-bottom: 1px solid #333;
-        }
-        .page-header h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 10px; color: var(--primary); }
-        .page-header p { font-size: 1.1rem; color: #ddd; max-width: 600px; margin: auto; }
-
-        /* --- FILTER BUTTONS --- */
-        .filter-container { text-align: center; margin: 50px 0 30px; padding: 0 20px; }
-        .filter-btn {
-            background: transparent; border: 1px solid #444; color: #aaa;
-            padding: 10px 25px; margin: 5px; border-radius: 2px;
-            font-weight: 500; cursor: pointer; transition: 0.3s;
-            font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;
-        }
-        .filter-btn:hover, .filter-btn.active {
-            background: var(--primary); color: #000; border-color: var(--primary);
-        }
-
-        /* --- PRODUCT GRID --- */
-        .container { width: 92%; max-width: 1200px; margin: auto; padding-bottom: 80px; }
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 40px; }
-
-        .product-card {
-            background: #111; border: 1px solid #222; border-radius: 5px; overflow: hidden;
-            transition: 0.3s; position: relative;
-        }
-        .product-card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        
-        /* Hide/Show Logic */
-        .product-card.hide { display: none; }
-        .product-card.show { display: block; animation: fadeIn 0.5s; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-        .img-container {
-            width: 100%; aspect-ratio: 1 / 1; 
-            overflow: hidden; cursor: pointer; position: relative;
-        }
-        .img-container img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .img-container:hover img { transform: scale(1.1); }
-        
-        .gallery-icon {
-            position: absolute; top: 15px; right: 15px;
-            background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 3px;
-            font-size: 0.75rem; pointer-events: none; text-transform: uppercase; letter-spacing: 1px;
-        }
-
-        .details { padding: 25px; text-align: center; }
-        .details h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 10px; color: #fff; }
-        
-        .specs {
-            display: flex; justify-content: center; gap: 15px;
-            font-size: 0.85rem; color: #888; margin-bottom: 20px; border-bottom: 1px solid #222; padding-bottom: 15px;
-        }
-        .specs span { display: flex; flex-direction: column; line-height: 1.3; }
-        .specs strong { color: var(--primary); font-weight: 600; }
-
-        .buy-btn {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: #25d366; color: white; padding: 12px 30px; border-radius: 2px;
-            text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s;
-            text-transform: uppercase; letter-spacing: 0.5px; width: 100%; justify-content: center;
-        }
-        .buy-btn:hover { background: #128c7e; }
-
-        /* --- LIGHTBOX --- */
-        .lightbox {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.95); z-index: 2000;
-            display: none; flex-direction: column; justify-content: center; align-items: center;
-        }
-        .lightbox-main-area { 
-            position: relative; width: 90%; max-width: 800px; height: 60vh; 
-            display: flex; justify-content: center; align-items: center; margin-bottom: 20px; 
-        }
-        .lightbox-main-area img { 
-            max-width: 100%; max-height: 100%; border: 1px solid #333; 
-            transition: opacity 0.3s ease; opacity: 1; 
-        }
-        .lb-arrow {
-            position: absolute; top: 50%; transform: translateY(-50%);
-            color: white; font-size: 2.5rem; cursor: pointer; padding: 20px;
-            z-index: 2002; transition: 0.3s; opacity: 0.7; user-select: none;
-        }
-        .lb-arrow:hover { opacity: 1; color: var(--primary); }
-        .lb-prev { left: -60px; } .lb-next { right: -60px; }
-        .close-lightbox { position: absolute; top: 20px; right: 30px; color: white; font-size: 3rem; cursor: pointer; z-index: 2005; }
-        .lightbox-thumbnails { display: flex; gap: 10px; overflow-x: auto; padding: 5px; max-width: 90%; }
-        .lightbox-thumb { width: 60px; height: 60px; object-fit: cover; cursor: pointer; border: 2px solid transparent; opacity: 0.5; transition: 0.3s; }
-        .lightbox-thumb.active { opacity: 1; border-color: var(--primary); }
-
-        /* --- FOOTER STYLES (MATCHING HOME) --- */
-        footer { background: #050505; color: #a0a0a0; padding-top: 70px; border-top: 1px solid #222; font-family: 'Inter', sans-serif; font-size: 0.95rem; }
-        .footer-grid { max-width: 1200px; margin: auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; padding-bottom: 50px; }
-        .footer-heading { color: #fff; font-family: 'Playfair Display', serif; letter-spacing: 1px; margin-bottom: 25px; text-transform: uppercase; font-size: 1.1rem; }
-        .footer-link { color: #a0a0a0; text-decoration: none; display: flex; align-items: center; gap: 10px; transition: 0.3s; margin-bottom: 12px; }
-        .footer-link:hover { color: var(--primary); transform: translateX(5px); }
-        .footer-icon { color: var(--primary); width: 20px; text-align: center; }
-
-        @media (max-width: 768px) { .lb-arrow { display: none; } }
-    </style>
 </head>
-<body>
+
+<body class="jewellery-page">
 
     <nav>
-        <a href="index.html" class="nav-logo"><i class="far fa-gem"></i> GEM <span>CITY</span></a>
-        <ul class="nav-links">
-            <li><a href="all-gems.html">Collections</a></li>
+        <a href="index.html" class="nav-logo"
+            style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+            <img src="images/logoicon/webpro.png" alt="FACET Logo" style="height:55px;width:auto;">
+            <div style="display: flex; flex-direction: column; line-height: 1;">
+                <span
+                    style="font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: #fff; letter-spacing: 2px;">FACET</span>
+                <span
+                    style="font-family: 'Montserrat', sans-serif; font-size: 0.65rem; font-weight: 300; color: #D4AF37; letter-spacing: 3px; margin-top: 4px;">FINE
+                    JEWELRY</span>
+            </div>
+        </a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="all-gems.html">Gem Collection</a></li>
             <li><a href="jewellery.html" class="active">Jewellery</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li class="currency-selector-container" style="margin-left: 20px; display: flex; align-items: center;">
+                <select id="currency-selector"
+                    style="background: transparent; color: var(--primary); border: 1px solid rgba(212, 175, 55, 0.3); padding: 4px 8px; border-radius: 4px; font-family: 'Montserrat', sans-serif; font-size: 0.8rem; cursor: pointer; outline: none;">
+                    <option value="LKR">LKR</option>
+                    <option value="USD">USD</option>
+                    <option value="GBP">GBP</option>
+                </select>
+            </li>
         </ul>
+        <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
     </nav>
 
     <header class="page-header">
         <h1>Handcrafted Jewellery</h1>
         <p>Exquisite Gold & Silver designs embedded with precious Ceylon stones.</p>
+        <div class="filter-container">
+            <input type="text" id="searchInput" placeholder="Search jewellery..." onkeyup="searchItems()">
+            <br>
+            <button class="filter-btn active" onclick="filterJewellery('all')">All Jewellery</button>
+            <button class="filter-btn" onclick="filterJewellery('rings')">Rings</button>
+            <button class="filter-btn" onclick="filterJewellery('pendants')">Pendants</button>
+            <button class="filter-btn" onclick="filterJewellery('earrings')">Earrings</button>
+            <button class="filter-btn" onclick="filterJewellery('nawarathna')">Nawarathna</button>
+        </div>
     </header>
 
-    <div class="filter-container">
-        <button class="filter-btn active" onclick="filterItems('all')">All</button>
-        <button class="filter-btn" onclick="filterItems('rings')">Rings</button>
-        <button class="filter-btn" onclick="filterItems('earrings')">Earrings</button>
-        <button class="filter-btn" onclick="filterItems('pendant')">Pendants</button>
-        <button class="filter-btn" onclick="filterItems('nawarathna')">Nawarathna</button>
+    <!-- ===== 3D JEWELLERY VIEWER ===== -->
+    <section id="viewer-3d-section" style="
+        background: linear-gradient(180deg, #0a0a0a 0%, #111 50%, #0a0a0a 100%);
+        padding: 60px 20px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    ">
+        <!-- Decorative top border -->
+        <div style="
+            position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            width: 120px; height: 2px;
+            background: linear-gradient(90deg, transparent, #c1a35f, transparent);
+        "></div>
+
+        <p style="
+            font-family: 'Inter', sans-serif; font-size: 0.75rem; letter-spacing: 4px;
+            color: #c1a35f; text-transform: uppercase; margin-bottom: 10px;
+        ">Interactive 3D Preview</p>
+
+        <h2 style="
+            font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 4vw, 2.4rem);
+            color: #fff; font-weight: 700; margin-bottom: 8px;
+        ">Experience the Craftsmanship</h2>
+
+        <p style="color: #888; font-size: 0.95rem; margin-bottom: 30px;">
+            Drag &amp; rotate to explore every facet of our handcrafted ring.
+        </p>
+
+        <!-- Canvas wrapper -->
+        <div id="viewer-wrapper" style="
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto 20px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 0 60px rgba(193,163,95,0.18), 0 0 120px rgba(193,163,95,0.06);
+            border: 1px solid rgba(193,163,95,0.2);
+            background: radial-gradient(ellipse at center, #1a1208 0%, #0d0d0d 70%);
+        ">
+            <canvas id="ring-canvas-3d" style="
+                display: block;
+                width: 100% !important;
+                height: 420px;
+                cursor: grab;
+            "></canvas>
+
+            <!-- Loading overlay -->
+            <div id="viewer-loading" style="
+                position: absolute; inset: 0;
+                background: radial-gradient(ellipse at center, #1a1208 0%, #0a0a0a 100%);
+                display: flex; flex-direction: column;
+                align-items: center; justify-content: center;
+                z-index: 10; transition: opacity 0.8s ease;
+            ">
+                <div class="gem-spinner" style="
+                    width: 48px; height: 48px; margin-bottom: 16px;
+                    border: 3px solid #222;
+                    border-top-color: #c1a35f;
+                    border-radius: 50%;
+                    animation: spinRing 0.9s linear infinite;
+                "></div>
+                <p style="color: #c1a35f; font-size: 0.85rem; letter-spacing: 2px;">Loading 3D Model…</p>
+            </div>
+
+            <!-- Drag hint badge -->
+            <div id="drag-hint" style="
+                position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
+                background: rgba(0,0,0,0.6); border: 1px solid rgba(193,163,95,0.35);
+                border-radius: 30px; padding: 6px 16px;
+                color: #c1a35f; font-size: 0.75rem; letter-spacing: 1.5px;
+                pointer-events: none; transition: opacity 1s ease;
+                display: flex; align-items: center; gap: 8px;
+            ">
+                <i class="fas fa-hand-pointer" style="font-size:0.9rem;"></i> Drag to Rotate
+            </div>
+        </div>
+
+        <!-- Feature pills -->
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 10px;">
+            <span
+                style="background:#111; border:1px solid #333; border-radius:30px; padding:6px 18px; color:#c1a35f; font-size:0.8rem; letter-spacing:1px;">
+                <i class="fas fa-gem" style="margin-right:6px;"></i>Ceylon Gemstone
+            </span>
+            <span
+                style="background:#111; border:1px solid #333; border-radius:30px; padding:6px 18px; color:#c1a35f; font-size:0.8rem; letter-spacing:1px;">
+                <i class="fas fa-award" style="margin-right:6px;"></i>18K Gold Crafted
+            </span>
+            <span
+                style="background:#111; border:1px solid #333; border-radius:30px; padding:6px 18px; color:#c1a35f; font-size:0.8rem; letter-spacing:1px;">
+                <i class="fas fa-sync-alt" style="margin-right:6px;"></i>360° View
+            </span>
+        </div>
+
+        <!-- Decorative bottom border -->
+        <div style="
+            position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+            width: 120px; height: 2px;
+            background: linear-gradient(90deg, transparent, #c1a35f, transparent);
+        "></div>
+    </section>
+
+    <!-- ===== 3D PRODUCT CARDS SECTION ===== -->
+    <section id="products-3d-section" style="
+        padding: 60px 20px 80px;
+        background: #0a0a0a;
+        text-align: center;
+    ">
+        <p
+            style="font-family:'Inter',sans-serif;font-size:0.75rem;letter-spacing:4px;color:#c1a35f;text-transform:uppercase;margin-bottom:8px;">
+            Our Collection
+        </p>
+        <h2
+            style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,4vw,2.2rem);color:#fff;margin-bottom:10px;">
+            3D Jewellery Showcase
+        </h2>
+        <p style="color:#666;font-size:0.9rem;margin-bottom:50px;">Drag &amp; rotate each piece to explore every detail
+        </p>
+
+        <!-- Cards Grid -->
+        <div style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        ">
+
+            <!-- ─── Card 1 ─── -->
+            <div class="card-3d" style="
+                background: linear-gradient(145deg, #141414, #1a1a1a);
+                border: 1px solid rgba(193,163,95,0.2);
+                border-radius: 16px;
+                overflow: hidden;
+                transition: transform 0.3s, box-shadow 0.3s;
+            " onmouseenter="this.style.transform='translateY(-6px)';this.style.boxShadow='0 20px 60px rgba(193,163,95,0.15)'"
+                onmouseleave="this.style.transform='';this.style.boxShadow=''">
+                <!-- 3D Canvas -->
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div id="wrap-c1"
+                    style="position:relative;width:100%;height:280px;background:radial-gradient(ellipse at center,#1a1208 0%,#0d0d0d 70%);">
+                    <div class="status-badge status-available" style="top: 15px; left: 15px;">Available</div>
+                    <canvas id="canvas-c1" style="display:block;width:100%;height:280px;cursor:grab;"></canvas>
+                    <div id="load-c1" class="card-loader">
+                        <div class="mini-spinner"></div>
+                    </div>
+                </div>
+                <!-- Product Info -->
+                <div style="padding:22px 20px 26px;">
+                    <p
+                        style="font-size:0.7rem;letter-spacing:3px;color:#c1a35f;text-transform:uppercase;margin-bottom:8px;">
+                        Blue Sapphire · Ring</p>
+                    <h3 style="font-family:'Playfair Display',serif;color:#fff;font-size:1.2rem;margin-bottom:16px;">
+                        Ceylon Royal Sapphire Ring</h3>
+                    <div
+                        style="display:flex;justify-content:space-around;margin-bottom:18px;padding:14px 0;border-top:1px solid #222;border-bottom:1px solid #222;">
+                        <div>
+                            <p style="color:#555;font-size:0.72rem;letter-spacing:1px;margin-bottom:4px;">STONE</p>
+                            <p style="color:#e0e0e0;font-size:0.95rem;font-weight:600;">1.85 ct</p>
+                        </div>
+                        <div style="width:1px;background:#222;"></div>
+                        <div>
+                            <p style="color:#555;font-size:0.72rem;letter-spacing:1px;margin-bottom:4px;">METAL</p>
+                            <p style="color:#e0e0e0;font-size:0.95rem;font-weight:600;">18K Gold</p>
+                        </div>
+                        <div style="width:1px;background:#222;"></div>
+                        <div>
+                            <p style="color:#555;font-size:0.72rem;letter-spacing:1px;margin-bottom:4px;">WEIGHT</p>
+                            <p style="color:#e0e0e0;font-size:0.95rem;font-weight:600;">4.2 g</p>
+                        </div>
+                    </div>
+                    <p class="dynamic-price" data-base-price="450000"
+                        style="color:#c1a35f;font-size:1.25rem;font-weight:700;margin-bottom:6px;">LKR 450,000</p>
+                    <p style="color:#555;font-size:0.78rem;margin-bottom:18px;"><i class="fas fa-credit-card"
+                            style="margin-right:5px;"></i>12 months 0% EMI Available</p>
+                    <a href="contact.html" style="
+                        display:block;background:linear-gradient(90deg,#c1a35f,#d4b86a);
+                        color:#000;font-weight:700;font-size:0.85rem;letter-spacing:2px;
+                        text-decoration:none;padding:12px;border-radius:6px;
+                        text-transform:uppercase;transition:opacity 0.3s;
+                    " onmouseenter="this.style.opacity='.85'" onmouseleave="this.style.opacity='1'">
+                        Inquire Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- ─── Card 2 ─── -->
+            <div class="card-3d" style="
+                background: linear-gradient(145deg, #141414, #1a1a1a);
+                border: 1px solid rgba(193,163,95,0.2);
+                border-radius: 16px;
+                overflow: hidden;
+                transition: transform 0.3s, box-shadow 0.3s;
+            " onmouseenter="this.style.transform='translateY(-6px)';this.style.boxShadow='0 20px 60px rgba(193,163,95,0.15)'"
+                onmouseleave="this.style.transform='';this.style.boxShadow=''">
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div id="wrap-c2"
+                    style="position:relative;width:100%;height:280px;background:radial-gradient(ellipse at center,#1a0808 0%,#0d0d0d 70%);">
+                    <div class="status-badge status-available" style="top: 15px; left: 15px;">Available</div>
+                    <canvas id="canvas-c2" style="display:block;width:100%;height:280px;cursor:grab;"></canvas>
+                    <div id="load-c2" class="card-loader">
+                        <div class="mini-spinner"></div>
+                    </div>
+                </div>
+                <div style="padding:22px 20px 26px;">
+                    <p
+                        style="font-size:0.7rem;letter-spacing:3px;color:#c1a35f;text-transform:uppercase;margin-bottom:8px;">
+                        Ruby · Ring</p>
+                    <h3 style="font-family:'Playfair Display',serif;color:#fff;font-size:1.2rem;margin-bottom:16px;">
+                        Pigeon Blood Ruby Solitaire</h3>
+                    <div
+                        style="display:flex;justify-content:space-around;margin-bottom:18px;padding:14px 0;border-top:1px solid #222;border-bottom:1px solid #222;">
+                        <div>
+                            <p style="color:#555;font-size:0.72rem;letter-spacing:1px;margin-bottom:4px;">STONE</p>
+                            <p style="color:#e0e0e0;font-size:0.95rem;font-weight:600;">2.10 ct</p>
+                        </div>
+                        <div style="width:1px;background:#222;"></div>
+                        <div>
+                            <p style="color:#555;font-size:0.72rem;letter-spacing:1px;margin-bottom:4px;">METAL</p>
+                            <p style="color:#e0e0e0;font-size:0.95rem;font-weight:600;">18K Gold</p>
+                        </div>
+                        <div style="width:1px;background:#222;"></div>
+                        <div>
+                            <p style="color:#555;font-size:0.72rem;letter-spacing:1px;margin-bottom:4px;">WEIGHT</p>
+                            <p style="color:#e0e0e0;font-size:0.95rem;font-weight:600;">5.0 g</p>
+                        </div>
+                    </div>
+                    <p class="dynamic-price" data-base-price="580000"
+                        style="color:#c1a35f;font-size:1.25rem;font-weight:700;margin-bottom:6px;">LKR 580,000</p>
+                    <p style="color:#555;font-size:0.78rem;margin-bottom:18px;"><i class="fas fa-credit-card"
+                            style="margin-right:5px;"></i>Pay in 3 installments · Koko/Mintpay</p>
+                    <a href="contact.html" style="
+                        display:block;background:linear-gradient(90deg,#c1a35f,#d4b86a);
+                        color:#000;font-weight:700;font-size:0.85rem;letter-spacing:2px;
+                        text-decoration:none;padding:12px;border-radius:6px;
+                        text-transform:uppercase;transition:opacity 0.3s;
+                    " onmouseenter="this.style.opacity='.85'" onmouseleave="this.style.opacity='1'">
+                        Inquire Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- ─── Card 3 ─── -->
+            <div class="card-3d" style="
+                background: linear-gradient(145deg, #141414, #1a1a1a);
+                border: 1px solid rgba(193,163,95,0.2);
+                border-radius: 16px;
+                overflow: hidden;
+                transition: transform 0.3s, box-shadow 0.3s;
+            " onmouseenter="this.style.transform='translateY(-6px)';this.style.boxShadow='0 20px 60px rgba(193,163,95,0.15)'"
+                onmouseleave="this.style.transform='';this.style.boxShadow=''">
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div id="wrap-c3"
+                    style="position:relative;width:100%;height:280px;background:radial-gradient(ellipse at center,#081a08 0%,#0d0d0d 70%);">
+                    <div class="status-badge status-available" style="top: 15px; left: 15px;">Available</div>
+                    <canvas id="canvas-c3" style="display:block;width:100%;height:280px;cursor:grab;"></canvas>
+                    <div id="load-c3" class="card-loader">
+                        <div class="mini-spinner"></div>
+                    </div>
+                </div>
+                <div style="padding:22px 20px 26px;">
+                    <p
+                        style="font-size:0.7rem;letter-spacing:3px;color:#c1a35f;text-transform:uppercase;margin-bottom:8px;">
+                        Emerald · Ring</p>
+                    <h3 style="font-family:'Playfair Display',serif;color:#fff;font-size:1.2rem;margin-bottom:16px;">
+                        Colombian Emerald Halo Ring</h3>
+                    <div
+                        style="display:flex;justify-content:space-around;margin-bottom:18px;padding:14px 0;border-top:1px solid #222;border-bottom:1px solid #222;">
+                        <div>
+                            <p style="color:#555;font-size:0.72rem;letter-spacing:1px;margin-bottom:4px;">STONE</p>
+                            <p style="color:#e0e0e0;font-size:0.95rem;font-weight:600;">1.65 ct</p>
+                        </div>
+                        <div style="width:1px;background:#222;"></div>
+                        <div>
+                            <p style="color:#555;font-size:0.72rem;letter-spacing:1px;margin-bottom:4px;">METAL</p>
+                            <p style="color:#e0e0e0;font-size:0.95rem;font-weight:600;">22K Gold</p>
+                        </div>
+                        <div style="width:1px;background:#222;"></div>
+                        <div>
+                            <p style="color:#555;font-size:0.72rem;letter-spacing:1px;margin-bottom:4px;">WEIGHT</p>
+                            <p style="color:#e0e0e0;font-size:0.95rem;font-weight:600;">4.8 g</p>
+                        </div>
+                    </div>
+                    <p class="dynamic-price" data-base-price="395000"
+                        style="color:#c1a35f;font-size:1.25rem;font-weight:700;margin-bottom:6px;">LKR 395,000</p>
+                    <p style="color:#555;font-size:0.78rem;margin-bottom:18px;"><i class="fas fa-credit-card"
+                            style="margin-right:5px;"></i>12 months 0% EMI Available</p>
+                    <a href="contact.html" style="
+                        display:block;background:linear-gradient(90deg,#c1a35f,#d4b86a);
+                        color:#000;font-weight:700;font-size:0.85rem;letter-spacing:2px;
+                        text-decoration:none;padding:12px;border-radius:6px;
+                        text-transform:uppercase;transition:opacity 0.3s;
+                    " onmouseenter="this.style.opacity='.85'" onmouseleave="this.style.opacity='1'">
+                        Inquire Now
+                    </a>
+                </div>
+            </div>
+
+        </div><!-- end cards grid -->
+    </section>
+
+    <div class="container" id="main-jewellery-container">
+
+        <section class="jewellery-category-section" id="section-daily-wear">
+            <h2
+                style="color: var(--primary); font-family: 'Playfair Display', serif; margin: 40px 0 20px; border-bottom: 1px solid #333; padding-bottom: 10px;">
+                Office & Daily Wear <span
+                    style="font-size: 1rem; color: #888; font-style: italic; font-family: 'Inter', sans-serif;">(Affordable
+                    Luxury)</span>
+            </h2>
+            <div class="product-grid">
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div class="product-card" data-category="daily-wear">
+                    <div class="img-container" onclick="openGallery(this)"
+                        data-images='["images/jewelleryw/earring1.webp"]'>
+                        <div class="status-badge status-available">Available</div>
+                        <img src="images/jewelleryw/earring1.webp" alt="Minimalist Studs" loading="lazy">
+                        <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
+                    </div>
+                    <div class="details">
+                        <h3>Minimalist Gold Studs</h3>
+                        <div class="specs" style="flex-wrap: wrap;">
+                            <span>Metal<br><strong>14K Gold</strong></span>
+                            <span>Gem<br><strong>Semi-Precious</strong></span>
+                        </div>
+                        <div class="price-box">
+                            <span class="dynamic-price" data-base-price="35000,55000">LKR 35,000 - 55,000</span>
+                            <p class="price-range">Price Range: Smart Luxury</p>
+                        </div>
+                        <a href="#" class="buy-btn">Inquiry</a>
+                        <p style="font-size: 0.75rem; color: var(--primary); margin-top: 5px;"><i
+                                class="fas fa-credit-card"></i> 0% EMI Available</p>
+                    </div>
+                </div>
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div class="product-card" data-category="daily-wear">
+                    <div class="img-container" onclick="openGallery(this)"
+                        data-images='["images/jewelleryw/necklace1.webp"]'>
+                        <div class="status-badge status-available">Available</div>
+                        <img src="images/jewelleryw/necklace1.webp" alt="Dainty Chain" loading="lazy">
+                        <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
+                    </div>
+                    <div class="details">
+                        <h3>Dainty Silver Necklace</h3>
+                        <div class="specs" style="flex-wrap: wrap;">
+                            <span>Metal<br><strong>925 Silver</strong></span>
+                            <span>Gem<br><strong>Natural Stone</strong></span>
+                        </div>
+                        <div class="price-box">
+                            <span class="dynamic-price" data-base-price="45000,75000">LKR 45,000 - 75,000</span>
+                            <p class="price-range">Price Range: Smart Luxury</p>
+                        </div>
+                        <a href="#" class="buy-btn">Inquiry</a>
+                        <p style="font-size: 0.75rem; color: var(--primary); margin-top: 5px;"><i
+                                class="fas fa-bolt"></i> Buy now, pay later with Koko</p>
+                    </div>
+                </div>
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div class="product-card" data-category="daily-wear">
+                    <div class="img-container" onclick="openGallery(this)"
+                        data-images='["images/jewelleryw/ring1.webp"]'>
+                        <div class="status-badge status-available">Available</div>
+                        <img src="images/jewelleryw/ring1.webp" alt="Office Ring" loading="lazy">
+                        <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
+                    </div>
+                    <div class="details">
+                        <h3>Petite Sapphire Ring</h3>
+                        <div class="specs" style="flex-wrap: wrap;">
+                            <span>Metal<br><strong>14K Gold</strong></span>
+                            <span>Gem<br><strong>Ceylon Blue</strong></span>
+                        </div>
+                        <div class="price-box">
+                            <span class="dynamic-price" data-base-price="65000,95000">LKR 65,000 - 95,000</span>
+                            <p class="price-range">Price Range: Affordable Luxury</p>
+                        </div>
+                        <a href="#" class="buy-btn">Inquiry</a>
+                        <p class="installment-text"><i class="fas fa-credit-card"></i> 12 months 0% EMI available</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="jewellery-category-section" id="section-rings">
+            <h2
+                style="color: var(--primary); font-family: 'Playfair Display', serif; margin: 40px 0 20px; border-bottom: 1px solid #333; padding-bottom: 10px;">
+                Exquisite Rings</h2>
+            <div class="product-grid">
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div class="product-card" data-category="rings">
+                    <div class="img-container" onclick="openGallery(this)"
+                        data-images='["images/jewelleryw/ring1.webp", "images/jewelleryw/ring1-side.webp", "images/jewelleryw/ring1-box.webp"]'>
+                        <div class="status-badge status-available">Available</div>
+                        <img src="images/jewelleryw/ring1.webp" alt="Blue Sapphire Ring" loading="lazy">
+                        <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
+                    </div>
+                    <div class="details">
+                        <h3>Blue Sapphire Ring</h3>
+                        <div class="specs" style="flex-wrap: wrap;">
+                            <span>Metal<br><strong>18K Gold</strong></span>
+                            <span>Gem<br><strong>Sapphire</strong></span>
+                            <span>Weight<br><strong>1.5ct</strong></span>
+                            <span>Sizing<br><strong>Adjustable</strong></span>
+                        </div>
+                        <div class="price-box">
+                            <span class="dynamic-price" data-base-price="450000,900000">LKR 450,000 - 900,000</span>
+                            <p class="price-range">Price Range: Premium Ring</p>
+                        </div>
+                        <a href="#" class="buy-btn">Inquiry</a>
+                    </div>
+                </div>
+                <!-- Premium Collection Rings -->
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div class="product-card" data-category="rings">
+                    <div class="img-container" onclick="openGallery(this)" data-images='["images/jewelleryw/01.webp"]'>
+                        <div class="status-badge status-available">Available</div>
+                        <img src="images/jewelleryw/01.webp" alt="Jewellery Piece 01" loading="lazy">
+                        <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
+                    </div>
+                    <div class="details">
+                        <h3>Premium Collection 01</h3>
+                        <div class="specs" style="flex-wrap: wrap;">
+                            <span>Metal<br><strong>Custom</strong></span>
+                            <span>Gem<br><strong>Ceylon Gem</strong></span>
+                        </div>
+                        <div class="price-box">
+                            <span class="dynamic-price" data-base-price="250000,650000">LKR 250,000 - 650,000</span>
+                            <p class="price-range">Price Range: Premium Collection</p>
+                        </div>
+                        <a href="#" class="buy-btn">Inquiry</a>
+                    </div>
+                </div>
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div class="product-card" data-category="rings">
+                    <div class="img-container" onclick="openGallery(this)" data-images='["images/jewelleryw/02.webp"]'>
+                        <div class="status-badge status-available">Available</div>
+                        <img src="images/jewelleryw/02.webp" alt="Jewellery Piece 02" loading="lazy">
+                        <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
+                    </div>
+                    <div class="details">
+                        <h3>Premium Collection 02</h3>
+                        <div class="specs" style="flex-wrap: wrap;">
+                            <span>Metal<br><strong>Custom</strong></span>
+                            <span>Gem<br><strong>Ceylon Gem</strong></span>
+                        </div>
+                        <div class="price-box">
+                            <span class="dynamic-price" data-base-price="250000,650000">LKR 250,000 - 650,000</span>
+                            <p class="price-range">Price Range: Premium Collection</p>
+                        </div>
+                        <a href="#" class="buy-btn">Inquiry</a>
+                    </div>
+                </div>
+                <!-- ... other collection items ... -->
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div class="product-card" data-category="rings">
+                    <div class="img-container" onclick="openGallery(this)" data-images='["images/jewelleryw/03.webp"]'>
+                        <div class="status-badge status-available">Available</div>
+                        <img src="images/jewelleryw/03.webp" alt="Jewellery Piece 03" loading="lazy">
+                        <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
+                    </div>
+                    <div class="details">
+                        <h3>Premium Collection 03</h3>
+                        <div class="specs" style="flex-wrap: wrap;">
+                            <span>Metal<br><strong>Custom</strong></span>
+                            <span>Gem<br><strong>Ceylon Gem</strong></span>
+                        </div>
+                        <div class="price-box">
+                            <span class="dynamic-price" data-base-price="250000,650000">LKR 250,000 - 650,000</span>
+                            <p class="price-range">Price Range: Premium Collection</p>
+                        </div>
+                        <a href="#" class="buy-btn">Inquiry</a>
+                    </div>
+                </div>
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div class="product-card" data-category="rings">
+                    <div class="img-container" onclick="openGallery(this)" data-images='["images/jewelleryw/04.webp"]'>
+                        <div class="status-badge status-available">Available</div>
+                        <img src="images/jewelleryw/04.webp" alt="Jewellery Piece 04" loading="lazy">
+                        <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
+                    </div>
+                    <div class="details">
+                        <h3>Premium Collection 04</h3>
+                        <div class="specs" style="flex-wrap: wrap;">
+                            <span>Metal<br><strong>Custom</strong></span>
+                            <span>Gem<br><strong>Ceylon Gem</strong></span>
+                        </div>
+                        <div class="price-box">
+                            <span class="dynamic-price" data-base-price="250000,650000">LKR 250,000 - 650,000</span>
+                            <p class="price-range">Price Range: Premium Collection</p>
+                        </div>
+                        <a href="#" class="buy-btn">Inquiry</a>
+                    </div>
+                </div>
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div class="product-card" data-category="rings">
+                    <div class="img-container" onclick="openGallery(this)" data-images='["images/jewelleryw/05.webp"]'>
+                        <div class="status-badge status-available">Available</div>
+                        <img src="images/jewelleryw/05.webp" alt="Jewellery Piece 05" loading="lazy">
+                        <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
+                    </div>
+                    <div class="details">
+                        <h3>Premium Collection 05</h3>
+                        <div class="specs" style="flex-wrap: wrap;">
+                            <span>Metal<br><strong>Custom</strong></span>
+                            <span>Gem<br><strong>Ceylon Gem</strong></span>
+                        </div>
+                        <div class="price-box">
+                            <span class="dynamic-price" data-base-price="250000,650000">LKR 250,000 - 650,000</span>
+                            <p class="price-range">Price Range: Premium Collection</p>
+                        </div>
+                        <a href="#" class="buy-btn">Inquiry</a>
+                    </div>
+                </div>
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div class="product-card" data-category="rings">
+                    <div class="img-container" onclick="openGallery(this)" data-images='["images/jewelleryw/06.webp"]'>
+                        <div class="status-badge status-available">Available</div>
+                        <img src="images/jewelleryw/06.webp" alt="Jewellery Piece 06" loading="lazy">
+                        <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
+                    </div>
+                    <div class="details">
+                        <h3>Premium Collection 06</h3>
+                        <div class="specs" style="flex-wrap: wrap;">
+                            <span>Metal<br><strong>Custom</strong></span>
+                            <span>Gem<br><strong>Ceylon Gem</strong></span>
+                        </div>
+                        <div class="price-box">
+                            <span class="dynamic-price" data-base-price="250000,650000">LKR 250,000 - 650,000</span>
+                            <p class="price-range">Price Range: Premium Collection</p>
+                        </div>
+                        <a href="#" class="buy-btn">Inquiry</a>
+                    </div>
+                </div>
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div class="product-card" data-category="rings">
+                    <div class="img-container" onclick="openGallery(this)" data-images='["images/jewelleryw/07.webp"]'>
+                        <div class="status-badge status-available">Available</div>
+                        <img src="images/jewelleryw/07.webp" alt="Jewellery Piece 07" loading="lazy">
+                        <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
+                    </div>
+                    <div class="details">
+                        <h3>Premium Collection 07</h3>
+                        <div class="specs" style="flex-wrap: wrap;">
+                            <span>Metal<br><strong>Custom</strong></span>
+                            <span>Gem<br><strong>Ceylon Gem</strong></span>
+                        </div>
+                        <div class="price-box">
+                            <span class="dynamic-price" data-base-price="250000,650000">LKR 250,000 - 650,000</span>
+                            <p class="price-range">Price Range: Premium Collection</p>
+                        </div>
+                        <a href="#" class="buy-btn">Inquiry</a>
+                    </div>
+                </div>
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div class="product-card" data-category="rings">
+                    <div class="img-container" onclick="openGallery(this)" data-images='["images/jewelleryw/08.webp"]'>
+                        <div class="status-badge status-available">Available</div>
+                        <img src="images/jewelleryw/08.webp" alt="Jewellery Piece 08" loading="lazy">
+                        <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
+                    </div>
+                    <div class="details">
+                        <h3>Premium Collection 08</h3>
+                        <div class="specs" style="flex-wrap: wrap;">
+                            <span>Metal<br><strong>Custom</strong></span>
+                            <span>Gem<br><strong>Ceylon Gem</strong></span>
+                        </div>
+                        <div class="price-box">
+                            <span class="dynamic-price" data-base-price="250000,650000">LKR 250,000 - 650,000</span>
+                            <p class="price-range">Price Range: Premium Collection</p>
+                        </div>
+                        <a href="#" class="buy-btn">Inquiry</a>
+                    </div>
+                </div>
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div class="product-card" data-category="rings">
+                    <div class="img-container" onclick="openGallery(this)" data-images='["images/jewelleryw/09.webp"]'>
+                        <div class="status-badge status-available">Available</div>
+                        <img src="images/jewelleryw/09.webp" alt="Jewellery Piece 09" loading="lazy">
+                        <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
+                    </div>
+                    <div class="details">
+                        <h3>Premium Collection 09</h3>
+                        <div class="specs" style="flex-wrap: wrap;">
+                            <span>Metal<br><strong>Custom</strong></span>
+                            <span>Gem<br><strong>Ceylon Gem</strong></span>
+                        </div>
+                        <div class="price-box">
+                            <span class="dynamic-price" data-base-price="250000,650000">LKR 250,000 - 650,000</span>
+                            <p class="price-range">Price Range: Premium Collection</p>
+                        </div>
+                        <a href="#" class="buy-btn">Inquiry</a>
+                    </div>
+                </div>
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div class="product-card" data-category="rings">
+                    <div class="img-container" onclick="openGallery(this)" data-images='["images/jewelleryw/10.webp"]'>
+                        <div class="status-badge status-available">Available</div>
+                        <img src="images/jewelleryw/10.webp" alt="Jewellery Piece 10" loading="lazy">
+                        <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
+                    </div>
+                    <div class="details">
+                        <h3>Premium Collection 10</h3>
+                        <div class="specs" style="flex-wrap: wrap;">
+                            <span>Metal<br><strong>Custom</strong></span>
+                            <span>Gem<br><strong>Ceylon Gem</strong></span>
+                        </div>
+                        <div class="price-box">
+                            <span class="dynamic-price" data-base-price="250000,650000">LKR 250,000 - 650,000</span>
+                            <p class="price-range">Price Range: Premium Collection</p>
+                        </div>
+                        <a href="#" class="buy-btn">Inquiry</a>
+                    </div>
+                </div>
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div class="product-card" data-category="rings">
+                    <div class="img-container" onclick="openGallery(this)" data-images='["images/jewelleryw/11.webp"]'>
+                        <div class="status-badge status-available">Available</div>
+                        <img src="images/jewelleryw/11.webp" alt="Jewellery Piece 11" loading="lazy">
+                        <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
+                    </div>
+                    <div class="details">
+                        <h3>Premium Collection 11</h3>
+                        <div class="specs" style="flex-wrap: wrap;">
+                            <span>Metal<br><strong>Custom</strong></span>
+                            <span>Gem<br><strong>Ceylon Gem</strong></span>
+                        </div>
+                        <div class="price-box">
+                            <span class="dynamic-price" data-base-price="250000,650000">LKR 250,000 - 650,000</span>
+                            <p class="price-range">Price Range: Premium Collection</p>
+                        </div>
+                        <a href="#" class="buy-btn">Inquiry</a>
+                    </div>
+                </div>
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div class="product-card" data-category="rings">
+                    <div class="img-container" onclick="openGallery(this)" data-images='["images/jewelleryw/12.webp"]'>
+                        <div class="status-badge status-available">Available</div>
+                        <img src="images/jewelleryw/12.webp" alt="Jewellery Piece 12" loading="lazy">
+                        <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
+                    </div>
+                    <div class="details">
+                        <h3>Premium Collection 12</h3>
+                        <div class="specs" style="flex-wrap: wrap;">
+                            <span>Metal<br><strong>Custom</strong></span>
+                            <span>Gem<br><strong>Ceylon Gem</strong></span>
+                        </div>
+                        <div class="price-box">
+                            <span class="dynamic-price" data-base-price="250000,650000">LKR 250,000 - 650,000</span>
+                            <p class="price-range">Price Range: Premium Collection</p>
+                        </div>
+                        <p class="installment-text"><i class="fas fa-credit-card"></i> Pay in 3 installments with
+                            Koko/Mintpay</p>
+                        <a href="#" class="buy-btn">Inquiry</a>
+                    </div>
+                </div>
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div class="product-card" data-category="rings">
+                    <div class="img-container" onclick="openGallery(this)" data-images='["images/jewelleryw/13.webp"]'>
+                        <div class="status-badge status-available">Available</div>
+                        <img src="images/jewelleryw/13.webp" alt="Jewellery Piece 13" loading="lazy">
+                        <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
+                    </div>
+                    <div class="details">
+                        <h3>Premium Collection 13</h3>
+                        <div class="specs" style="flex-wrap: wrap;">
+                            <span>Metal<br><strong>Custom</strong></span>
+                            <span>Gem<br><strong>Ceylon Gem</strong></span>
+                        </div>
+                        <div class="price-box">
+                            <span class="dynamic-price" data-base-price="250000,650000">LKR 250,000 - 650,000</span>
+                            <p class="price-range">Price Range: Premium Collection</p>
+                        </div>
+                        <p class="installment-text"><i class="fas fa-credit-card"></i> Pay in 3 installments with
+                            Koko/Mintpay</p>
+                        <a href="#" class="buy-btn">Inquiry</a>
+                    </div>
+                </div>
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div class="product-card" data-category="rings">
+                    <div class="img-container" onclick="openGallery(this)" data-images='["images/jewelleryw/14.webp"]'>
+                        <div class="status-badge status-available">Available</div>
+                        <img src="images/jewelleryw/14.webp" alt="Jewellery Piece 14" loading="lazy">
+                        <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
+                    </div>
+                    <div class="details">
+                        <h3>Premium Collection 14</h3>
+                        <div class="specs" style="flex-wrap: wrap;">
+                            <span>Metal<br><strong>Custom</strong></span>
+                            <span>Gem<br><strong>Ceylon Gem</strong></span>
+                        </div>
+                        <div class="price-box">
+                            <span class="dynamic-price" data-base-price="240000,600000">LKR 240,000 - 600,000</span>
+                            <p class="price-range">Price Range: Premium Collection</p>
+                        </div>
+                        <p class="installment-text"><i class="fas fa-credit-card"></i> Pay in 3 installments with
+                            Koko/Mintpay</p>
+                        <a href="#" class="buy-btn">Inquiry</a>
+                    </div>
+                </div>
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div class="product-card" data-category="rings">
+                    <div class="img-container" onclick="openGallery(this)" data-images='["images/jewelleryw/15.webp"]'>
+                        <div class="status-badge status-available">Available</div>
+                        <img src="images/jewelleryw/15.webp" alt="Jewellery Piece 15" loading="lazy">
+                        <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
+                    </div>
+                    <div class="details">
+                        <h3>Premium Collection 15</h3>
+                        <div class="specs" style="flex-wrap: wrap;">
+                            <span>Metal<br><strong>Custom</strong></span>
+                            <span>Gem<br><strong>Ceylon Gem</strong></span>
+                        </div>
+                        <div class="price-box">
+                            <span class="dynamic-price" data-base-price="350000,750000">LKR 350,000 - 750,000</span>
+                            <p class="price-range">Price Range: Premium Collection</p>
+                        </div>
+                        <p class="installment-text"><i class="fas fa-credit-card"></i> Pay in 3 installments with
+                            Koko/Mintpay</p>
+                        <a href="#" class="buy-btn">Inquiry</a>
+                    </div>
+                </div>
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div class="product-card" data-category="rings">
+                    <div class="img-container" onclick="openGallery(this)" data-images='["images/jewelleryw/16.webp"]'>
+                        <div class="status-badge status-available">Available</div>
+                        <img src="images/jewelleryw/16.webp" alt="Jewellery Piece 16" loading="lazy">
+                        <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
+                    </div>
+                    <div class="details">
+                        <h3>Premium Collection 16</h3>
+                        <div class="specs" style="flex-wrap: wrap;">
+                            <span>Metal<br><strong>Custom</strong></span>
+                            <span>Gem<br><strong>Ceylon Gem</strong></span>
+                        </div>
+                        <p class="installment-text"><i class="fas fa-credit-card"></i> Pay in 3 installments with
+                            Koko/Mintpay</p>
+                        <a href="#" class="buy-btn">Inquiry</a>
+                    </div>
+                </div>
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div class="product-card" data-category="rings">
+                    <div class="img-container" onclick="openGallery(this)" data-images='["images/jewelleryw/17.webp"]'>
+                        <div class="status-badge status-available">Available</div>
+                        <img src="images/jewelleryw/17.webp" alt="Jewellery Piece 17" loading="lazy">
+                        <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
+                    </div>
+                    <div class="details">
+                        <h3>Premium Collection 17</h3>
+                        <div class="specs" style="flex-wrap: wrap;">
+                            <span>Metal<br><strong>Custom</strong></span>
+                            <span>Gem<br><strong>Ceylon Gem</strong></span>
+                        </div>
+                        <p class="installment-text"><i class="fas fa-credit-card"></i> Pay in 3 installments with
+                            Koko/Mintpay</p>
+                        <a href="#" class="buy-btn">Inquiry</a>
+                    </div>
+                </div>
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div class="product-card" data-category="rings">
+                    <div class="img-container" onclick="openGallery(this)" data-images='["images/jewelleryw/18.webp"]'>
+                        <div class="status-badge status-available">Available</div>
+                        <img src="images/jewelleryw/18.webp" alt="Jewellery Piece 18" loading="lazy">
+                        <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
+                    </div>
+                    <div class="details">
+                        <h3>Premium Collection 18</h3>
+                        <div class="specs" style="flex-wrap: wrap;">
+                            <span>Metal<br><strong>Custom</strong></span>
+                            <span>Gem<br><strong>Ceylon Gem</strong></span>
+                        </div>
+                        <div class="price-box">
+                            <span class="dynamic-price" data-base-price="280000,620000">LKR 280,000 - 620,000</span>
+                            <p class="price-range">Price Range: Premium Collection</p>
+                        </div>
+                        <p class="installment-text"><i class="fas fa-credit-card"></i> Pay in 3 installments with
+                            Koko/Mintpay</p>
+                        <a href="#" class="buy-btn">Inquiry</a>
+                    </div>
+                </div>
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div class="product-card" data-category="rings">
+                    <div class="img-container" onclick="openGallery(this)" data-images='["images/jewelleryw/19.webp"]'>
+                        <div class="status-badge status-available">Available</div>
+                        <img src="images/jewelleryw/19.webp" alt="Jewellery Piece 19" loading="lazy">
+                        <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
+                    </div>
+                    <div class="details">
+                        <h3>Premium Collection 19</h3>
+                        <div class="specs" style="flex-wrap: wrap;">
+                            <span>Metal<br><strong>Custom</strong></span>
+                            <span>Gem<br><strong>Ceylon Gem</strong></span>
+                        </div>
+                        <div class="price-box">
+                            <span class="dynamic-price" data-base-price="310000,680000">LKR 310,000 - 680,000</span>
+                            <p class="price-range">Price Range: Premium Collection</p>
+                        </div>
+                        <p class="installment-text"><i class="fas fa-credit-card"></i> Pay in 3 installments with
+                            Koko/Mintpay</p>
+                        <a href="#" class="buy-btn">Inquiry</a>
+                    </div>
+                </div>
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div class="product-card" data-category="rings">
+                    <div class="img-container" onclick="openGallery(this)" data-images='["images/jewelleryw/20.webp"]'>
+                        <div class="status-badge status-available">Available</div>
+                        <img src="images/jewelleryw/20.webp" alt="Jewellery Piece 20" loading="lazy">
+                        <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
+                    </div>
+                    <div class="details">
+                        <h3>Premium Collection 20</h3>
+                        <div class="specs" style="flex-wrap: wrap;">
+                            <span>Metal<br><strong>Custom</strong></span>
+                            <span>Gem<br><strong>Ceylon Gem</strong></span>
+                        </div>
+                        <div class="price-box">
+                            <span class="dynamic-price" data-base-price="245000,590000">LKR 245,000 - 590,000</span>
+                            <p class="price-range">Price Range: Premium Collection</p>
+                        </div>
+                        <p class="installment-text"><i class="fas fa-credit-card"></i> Pay in 3 installments with
+                            Koko/Mintpay</p>
+                        <a href="#" class="buy-btn">Inquiry</a>
+                    </div>
+                </div>
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div class="product-card" data-category="rings">
+                    <div class="img-container" onclick="openGallery(this)" data-images='["images/jewelleryw/21.webp"]'>
+                        <div class="status-badge status-available">Available</div>
+                        <img src="images/jewelleryw/21.webp" alt="Jewellery Piece 21" loading="lazy">
+                        <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
+                    </div>
+                    <div class="details">
+                        <h3>Premium Collection 21</h3>
+                        <div class="specs" style="flex-wrap: wrap;">
+                            <span>Metal<br><strong>Custom</strong></span>
+                            <span>Gem<br><strong>Ceylon Gem</strong></span>
+                        </div>
+                        <div class="price-box">
+                            <span class="dynamic-price" data-base-price="380000,820000">LKR 380,000 - 820,000</span>
+                            <p class="price-range">Price Range: Premium Collection</p>
+                        </div>
+                        <p class="installment-text"><i class="fas fa-credit-card"></i> Pay in 3 installments with
+                            Koko/Mintpay</p>
+                        <a href="#" class="buy-btn">Inquiry</a>
+                    </div>
+                </div>
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div class="product-card" data-category="rings">
+                    <div class="img-container" onclick="openGallery(this)" data-images='["images/jewelleryw/22.webp"]'>
+                        <div class="status-badge status-available">Available</div>
+                        <img src="images/jewelleryw/22.webp" alt="Jewellery Piece 22" loading="lazy">
+                        <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
+                    </div>
+                    <div class="details">
+                        <h3>Premium Collection 22</h3>
+                        <div class="specs" style="flex-wrap: wrap;">
+                            <span>Metal<br><strong>Custom</strong></span>
+                            <span>Gem<br><strong>Ceylon Gem</strong></span>
+                        </div>
+                        <div class="price-box">
+                            <span class="dynamic-price" data-base-price="295000,640000">LKR 295,000 - 640,000</span>
+                            <p class="price-range">Price Range: Premium Collection</p>
+                        </div>
+                        <p class="installment-text"><i class="fas fa-credit-card"></i> Pay in 3 installments with
+                            Koko/Mintpay</p>
+                        <a href="#" class="buy-btn">Inquiry</a>
+                    </div>
+                </div>
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div class="product-card" data-category="rings">
+                    <div class="img-container" onclick="openGallery(this)" data-images='["images/jewelleryw/23.webp"]'>
+                        <div class="status-badge status-available">Available</div>
+                        <img src="images/jewelleryw/23.webp" alt="Jewellery Piece 23" loading="lazy">
+                        <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
+                    </div>
+                    <div class="details">
+                        <h3>Premium Collection 23</h3>
+                        <div class="specs" style="flex-wrap: wrap;">
+                            <span>Metal<br><strong>Custom</strong></span>
+                            <span>Gem<br><strong>Ceylon Gem</strong></span>
+                        </div>
+                        <div class="price-box">
+                            <span class="dynamic-price" data-base-price="420000,880000">LKR 420,000 - 880,000</span>
+                            <p class="price-range">Price Range: Premium Collection</p>
+                        </div>
+                        <p class="installment-text"><i class="fas fa-credit-card"></i> Pay in 3 installments with
+                            Koko/Mintpay</p>
+                        <a href="#" class="buy-btn">Inquiry</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="jewellery-category-section" id="section-pendants">
+            <h2
+                style="color: var(--primary); font-family: 'Playfair Display', serif; margin: 40px 0 20px; border-bottom: 1px solid #333; padding-bottom: 10px;">
+                Pendants & Necklaces</h2>
+            <div class="product-grid">
+                <!-- PRODUCT STATUS: AVAILABLE -->
+                <div class="product-card" data-category="pendants">
+                    <div class="img-container" onclick="openGallery(this)"
+                        data-images='["images/jewelleryw/necklace1.webp", "images/jewelleryw/necklace1-detail.webp", "images/jewelleryw/necklace1-wear.webp"]'>
+                        <div class="status-badge status-available">Available</div>
+                        <img src="images/jewelleryw/necklace1.webp" alt="Ruby Heart Pendant" loading="lazy">
+                        <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
+                    </div>
+                    <div class="details">
+                        <h3>Ruby Heart Pendant</h3>
+                    </div>
+                    <div class="price-box">
+                        <span class="dynamic-price" data-base-price="45000,85000">LKR 45,000 - 85,000</span>
+                        <p class="price-range">Price Range: Premium Pendant</p>
+                    </div>
+                    <p class="installment-text"><i class="fas fa-credit-card"></i> Pay in 3 installments with
+                        Koko/Mintpay</p>
+                    <a href="#" class="buy-btn">Inquiry</a>
+                </div>
+            </div>
     </div>
+    </section>
 
-    <div class="container">
+    <section class="jewellery-category-section" id="section-earrings">
+        <h2
+            style="color: var(--primary); font-family: 'Playfair Display', serif; margin: 40px 0 20px; border-bottom: 1px solid #333; padding-bottom: 10px;">
+            Earrings</h2>
         <div class="product-grid">
-            
-            <div class="product-card" data-category="rings">
-                <div class="img-container" onclick="openGallery(this)" 
-                     data-images='["images/ring1.jpg", "images/ring1-side.jpg", "images/ring1-box.jpg"]'>
-                    <img src="images/ring1.jpg" alt="Blue Sapphire Ring">
-                    <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
-                </div>
-                <div class="details">
-                    <h3>Blue Sapphire Ring</h3>
-                    <div class="specs">
-                        <span>Metal<br><strong>18K Gold</strong></span>
-                        <span>Gem<br><strong>Sapphire</strong></span>
-                        <span>Weight<br><strong>1.5ct</strong></span>
-                    </div>
-                    <a href="#" class="buy-btn"><i class="fab fa-whatsapp"></i> Inquire Price</a>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="pendant">
-                <div class="img-container" onclick="openGallery(this)" 
-                     data-images='["images/necklace1.jpg", "images/necklace1-detail.jpg", "images/necklace1-wear.jpg"]'>
-                    <img src="images/necklace1.jpg" alt="Ruby Heart Pendant">
-                    <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
-                </div>
-                <div class="details">
-                    <h3>Ruby Heart Pendant</h3>
-                    <div class="specs">
-                        <span>Metal<br><strong>Silver</strong></span>
-                        <span>Gem<br><strong>Ruby</strong></span>
-                        <span>Design<br><strong>Modern</strong></span>
-                    </div>
-                    <a href="#" class="buy-btn"><i class="fab fa-whatsapp"></i> Inquire Price</a>
-                </div>
-            </div>
-
+            <!-- PRODUCT STATUS: AVAILABLE -->
             <div class="product-card" data-category="earrings">
-                <div class="img-container" onclick="openGallery(this)" 
-                     data-images='["images/earring1.jpg", "images/earring1-side.jpg", "images/earring1-box.jpg"]'>
-                    <img src="images/earring1.jpg" alt="Gemstone Earrings">
+                <div class="img-container" onclick="openGallery(this)"
+                    data-images='["images/jewelleryw/earring1.webp", "images/jewelleryw/earring1-side.webp", "images/jewelleryw/earring1-box.webp"]'>
+                    <div class="status-badge status-available">Available</div>
+                    <img src="images/jewelleryw/earring1.webp" alt="Gemstone Earrings" loading="lazy">
                     <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
                 </div>
                 <div class="details">
                     <h3>Emerald Earrings</h3>
-                    <div class="specs">
+                    <div class="specs" style="flex-wrap: wrap;">
                         <span>Metal<br><strong>Rose Gold</strong></span>
                         <span>Gem<br><strong>Emerald</strong></span>
                         <span>Style<br><strong>Studs</strong></span>
+                        <span>Fit<br><strong>Secure</strong></span>
                     </div>
-                    <a href="#" class="buy-btn"><i class="fab fa-whatsapp"></i> Inquire Price</a>
+                    <div class="price-box">
+                        <span class="dynamic-price" data-base-price="125000,250000">LKR 125,000 - 250,000</span>
+                        <p class="price-range">Price Range: Premium Earrings</p>
+                    </div>
+                    <p class="installment-text"><i class="fas fa-credit-card"></i> Pay in 3 installments with
+                        Koko/Mintpay</p>
+                    <a href="#" class="buy-btn">Inquiry</a>
                 </div>
             </div>
+        </div>
+    </section>
 
+    <section class="jewellery-category-section" id="section-nawarathna">
+        <h2
+            style="color: var(--primary); font-family: 'Playfair Display', serif; margin: 40px 0 20px; border-bottom: 1px solid #333; padding-bottom: 10px;">
+            Nawarathna Collection</h2>
+        <div class="product-grid">
+            <!-- PRODUCT STATUS: AVAILABLE -->
             <div class="product-card" data-category="nawarathna">
-                <div class="img-container" onclick="openGallery(this)" 
-                     data-images='["images/nawa1.jpg", "images/nawa1-side.jpg", "images/nawa1-box.jpg"]'>
-                    <img src="images/nawa1.jpg" alt="Classic Nawarathna">
+                <div class="img-container" onclick="openGallery(this)"
+                    data-images='["images/jewelleryw/nawa1.webp", "images/jewelleryw/nawa1-side.webp", "images/jewelleryw/nawa1-box.webp"]'>
+                    <div class="status-badge status-available">Available</div>
+                    <img src="images/jewelleryw/nawa1.webp" alt="Classic Nawarathna" loading="lazy">
                     <div class="gallery-icon"><i class="fas fa-expand"></i> View</div>
                 </div>
                 <div class="details">
                     <h3>Classic Nawarathna</h3>
-                    <div class="specs">
+                    <div class="specs" style="flex-wrap: wrap;">
                         <span>Metal<br><strong>22K Gold</strong></span>
                         <span>Stones<br><strong>9 Gems</strong></span>
                         <span>Type<br><strong>Custom</strong></span>
+                        <span>Sizing<br><strong>On Demand</strong></span>
                     </div>
-                    <a href="#" class="buy-btn"><i class="fab fa-whatsapp"></i> Inquire Price</a>
+                    <div class="price-box">
+                        <span class="dynamic-price" data-base-price="350000,750000">LKR 350,000 - 750,000</span>
+                        <p class="price-range">Price Range: Custom Nawarathna</p>
+                    </div>
+                    <p class="installment-text"><i class="fas fa-credit-card"></i> Pay in 3 installments with
+                        Koko/Mintpay</p>
+                    <a href="#" class="buy-btn">Inquiry</a>
                 </div>
             </div>
-
         </div>
+    </section>
+
     </div>
 
     <div class="lightbox" id="gallery-lightbox">
         <span class="close-lightbox" onclick="closeGallery()">&times;</span>
         <div class="lightbox-main-area">
             <i class="fas fa-chevron-left lb-arrow lb-prev" onclick="prevImage(event)"></i>
-            <img id="main-gallery-img" src="">
+            <img id="main-gallery-img" src="" loading="lazy">
             <i class="fas fa-chevron-right lb-arrow lb-next" onclick="nextImage(event)"></i>
         </div>
         <div class="lightbox-thumbnails" id="gallery-thumbs"></div>
     </div>
 
-    <footer>
+    <footer id="contact">
         <div class="footer-grid">
-            
+
             <div>
                 <h4 class="footer-heading">Meet the Founder</h4>
-                
+
                 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 20px;">
-                    <img src="images/me.png" alt="Founder" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #c1a35f;">
+                    <img src="images/ui/me.png" alt="Founder"
+                        style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #c1a35f;"
+                        loading="lazy">
                     <div>
-                        <h5 style="color: #fff; font-size: 1.1rem; margin-bottom: 5px;">Your Name</h5>
-                        <p style="font-size: 0.85rem; color: #c1a35f; font-style: italic;">Gemologist & Founder</p>
+                        <h5 style="color: #fff; font-size: 1.1rem; margin-bottom: 5px;">Shavindu</h5>
+                        <p style="font-size: 0.85rem; color: #c1a35f; font-style: italic;">Gemologist & Founder
+                        </p>
                     </div>
                 </div>
-                
+
                 <p style="line-height: 1.6; margin-bottom: 20px;">
-                    "We don't just sell gems; we share the heritage of Ceylon. Every stone is handpicked from the mines of Ratnapura."
+                    "We don't just sell gems; we share the heritage of Ceylon. Every stone is handpicked from
+                    the mines
+                    of Ratnapura."
                 </p>
-                
+
                 <div style="display: flex; gap: 10px;">
-                    <a href="#" style="width: 35px; height: 35px; background: #222; color: #fff; display: flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; transition: 0.3s;"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" style="width: 35px; height: 35px; background: #222; color: #fff; display: flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; transition: 0.3s;"><i class="fab fa-instagram"></i></a>
+                    <a href="#"
+                        style="width: 35px; height: 35px; background: #222; color: #fff; display: flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; transition: 0.3s;"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="#"
+                        style="width: 35px; height: 35px; background: #222; color: #fff; display: flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; transition: 0.3s;"><i
+                            class="fab fa-instagram"></i></a>
                 </div>
             </div>
 
             <div>
                 <h4 class="footer-heading">Customer Promise</h4>
                 <div style="display: flex; flex-direction: column;">
-                    <a href="#" class="footer-link"><i class="fas fa-undo footer-icon"></i> 14-Day Money Back Guarantee</a>
-                    <a href="#" class="footer-link"><i class="fas fa-shipping-fast footer-icon"></i> Worldwide Insured Shipping</a>
-                    <a href="#" class="footer-link"><i class="fas fa-certificate footer-icon"></i> GIA/NGJA Authenticity Reports</a>
+                    <a href="#" class="footer-link"><i class="fas fa-undo footer-icon"></i> 14-Day Money Back
+                        Guarantee</a>
+                    <a href="#" class="footer-link"><i class="fas fa-shipping-fast footer-icon"></i> Worldwide
+                        Insured
+                        Shipping</a>
+                    <a href="#" class="footer-link"><i class="fas fa-certificate footer-icon"></i> GIA/NGJA
+                        Authenticity
+                        Reports</a>
                 </div>
             </div>
 
@@ -293,93 +1162,311 @@
                 <div style="background: #111; padding: 15px; border-radius: 5px; border: 1px solid #333;">
                     <p style="color: #fff; margin-bottom: 10px; font-size: 0.9rem;">Join exclusive list:</p>
                     <form style="display: flex; gap: 5px;">
-                        <input type="email" placeholder="Email" style="background: #222; border: 1px solid #444; padding: 8px; color: #fff; width: 100%; border-radius: 2px; outline: none;">
-                        <button type="submit" style="background: var(--primary); color: #000; border: none; padding: 8px 15px; font-weight: bold; cursor: pointer;">JOIN</button>
+                        <input type="email" placeholder="Email"
+                            style="background: #222; border: 1px solid #444; padding: 8px; color: #fff; width: 100%; border-radius: 2px; outline: none;">
+                        <button type="submit"
+                            style="background: var(--primary); color: #000; border: none; padding: 8px 15px; font-weight: bold; cursor: pointer;">JOIN</button>
                     </form>
                 </div>
             </div>
         </div>
-        
-        <div style="border-top: 1px solid #222; background: #000; padding: 20px 0; text-align: center;">
-            <p style="font-size: 0.85rem;">&copy; 2026 Gem City. All Rights Reserved.</p>
+
+        <div style="border-top: 1px solid #222; background: #000; padding: 20px 0;">
+            <div class="footer-bottom-content"
+                style="max-width: 1200px; margin: auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+                <p style="font-size: 0.85rem;">&copy; 2026 FACET. All Rights Reserved.</p>
+                <div class="payment-info">
+                    <div class="local-payments">
+                        <span><i class="fas fa-bolt" style="color: #00ffcc;"></i> Koko</span>
+                        <span><i class="fas fa-leaf" style="color: #ff3366;"></i> Mintpay</span>
+                        <span><i class="fas fa-percentage" style="color: var(--primary);"></i> 0% EMI Plans</span>
+                    </div>
+                    <div class="payment-icons">
+                        <i class="fab fa-cc-visa" style="color:#fff;"></i>
+                        <i class="fab fa-cc-mastercard" style="color:#fff;"></i>
+                        <i class="fab fa-cc-paypal" style="color:#fff;"></i>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <script>
-        // --- FILTER SCRIPT ---
-        function filterItems(category) {
-            const cards = document.querySelectorAll('.product-card');
-            const btns = document.querySelectorAll('.filter-btn');
-
-            btns.forEach(btn => {
-                const btnText = btn.textContent.toLowerCase();
-                if (btnText.includes(category) || (category === 'all' && btnText === 'all')) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
-
-            cards.forEach(card => {
-                const cardCat = card.getAttribute('data-category');
-                if (category === 'all' || cardCat === category) {
-                    card.classList.remove('hide');
-                    card.classList.add('show');
-                } else {
-                    card.classList.remove('show');
-                    card.classList.add('hide');
-                }
-            });
-        }
-
-        // --- LIGHTBOX SCRIPT ---
-        const lightbox = document.getElementById('gallery-lightbox');
-        const mainImg = document.getElementById('main-gallery-img');
-        const thumbsContainer = document.getElementById('gallery-thumbs');
-        let currentImages = [];
-        let currentIndex = 0;
-
-        function openGallery(element) {
-            currentImages = JSON.parse(element.getAttribute('data-images'));
-            currentIndex = 0;
-            if (currentImages.length > 0) {
-                updateLightbox();
-                lightbox.style.display = 'flex';
+    <style>
+        @keyframes spinRing {
+            to {
+                transform: rotate(360deg);
             }
         }
-        function closeGallery() { lightbox.style.display = 'none'; }
-        
-        function updateLightbox() {
-            mainImg.style.opacity = '0.5';
-            setTimeout(() => {
-                mainImg.src = currentImages[currentIndex];
-                mainImg.style.opacity = '1';
-                thumbsContainer.innerHTML = '';
-                currentImages.forEach((imgSrc, index) => {
-                    const thumb = document.createElement('img');
-                    thumb.src = imgSrc;
-                    thumb.classList.add('lightbox-thumb');
-                    if (index === currentIndex) thumb.classList.add('active');
-                    thumb.onclick = (e) => { e.stopPropagation(); currentIndex = index; updateLightbox(); };
-                    thumbsContainer.appendChild(thumb);
-                });
-            }, 150);
+
+        #ring-canvas-3d {
+            display: block;
+            width: 100%;
+            height: 420px;
         }
 
-        function nextImage(e) { if(e) e.stopPropagation(); currentIndex = (currentIndex + 1) % currentImages.length; updateLightbox(); }
-        function prevImage(e) { if(e) e.stopPropagation(); currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length; updateLightbox(); }
+        .card-loader {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: inherit;
+            z-index: 5;
+            transition: opacity 0.7s ease;
+        }
 
-        lightbox.addEventListener('click', (e) => { if (e.target === lightbox || e.target.classList.contains('lightbox-main-area')) closeGallery(); });
+        .mini-spinner {
+            width: 32px;
+            height: 32px;
+            border: 2px solid #222;
+            border-top-color: #c1a35f;
+            border-radius: 50%;
+            animation: spinRing 0.9s linear infinite;
+        }
+    </style>
 
-        // --- WHATSAPP DYNAMIC LINK ---
-        document.querySelectorAll('.product-card').forEach(card => {
-            const productName = card.querySelector('h3').innerText;
-            const whatsappBtn = card.querySelector('.buy-btn');
-            const message = `Hello, I am interested in the ${productName} (Jewellery) listed on your website. Please let me know the price.`;
-            const encodedMessage = encodeURIComponent(message);
-            whatsappBtn.href = `https://wa.me/94711098429?text=${encodedMessage}`;
-            whatsappBtn.target = "_blank";
+    <!-- Three.js 3D Viewer Scripts -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.163.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.163.0/examples/jsm/"
+        }
+    }
+    </script>
+    <script type="module">
+        import * as THREE from 'three';
+        import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+        // Wait for full layout before reading sizes
+        window.addEventListener('load', () => {
+
+            const canvas = document.getElementById('ring-canvas-3d');
+            const wrapper = document.getElementById('viewer-wrapper');
+            const loading = document.getElementById('viewer-loading');
+            const dragHint = document.getElementById('drag-hint');
+
+            const HEIGHT = 420;
+
+            // Get real width AFTER layout
+            function getW() {
+                return wrapper.getBoundingClientRect().width || wrapper.offsetWidth || 600;
+            }
+
+            // --- Renderer ---
+            const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.setSize(getW(), HEIGHT, false);
+            renderer.toneMapping = THREE.ACESFilmicToneMapping;
+            renderer.toneMappingExposure = 1.6;
+
+            // Fix canvas CSS so it doesn't fight Three.js
+            canvas.style.width = '100%';
+            canvas.style.height = HEIGHT + 'px';
+
+            // --- Scene ---
+            const scene = new THREE.Scene();
+
+            // --- Camera ---
+            const camera = new THREE.PerspectiveCamera(40, getW() / HEIGHT, 0.01, 100);
+            camera.position.set(0, 0.5, 3.5);
+
+            // --- OrbitControls ---
+            const controls = new OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.07;
+            controls.autoRotate = true;
+            controls.autoRotateSpeed = 1.6;
+            controls.enablePan = false;
+            controls.minDistance = 1.0;
+            controls.maxDistance = 8;
+            controls.target.set(0, 0, 0);
+
+            // Hide drag hint on first user touch
+            controls.addEventListener('start', () => {
+                dragHint.style.opacity = '0';
+                controls.autoRotate = false;
+            });
+
+            // Lighting setup
+            const keyLight = new THREE.DirectionalLight(0xffe8b0, 4.0);
+            keyLight.position.set(4, 5, 4);
+            scene.add(keyLight);
+            const fillLight = new THREE.DirectionalLight(0xb0d4ff, 1.5);
+            fillLight.position.set(-4, 2, -3);
+            scene.add(fillLight);
+            const rimLight = new THREE.DirectionalLight(0xffd580, 2.5);
+            rimLight.position.set(0, -3, -5);
+            scene.add(rimLight);
+            scene.add(new THREE.AmbientLight(0xfff5e0, 0.8));
+            const bounce = new THREE.PointLight(0xc1a35f, 1.5, 15);
+            bounce.position.set(0, -2, 0);
+            scene.add(bounce);
+
+            // Load GLB model
+            const loader = new GLTFLoader();
+            loader.load(
+                'images/models/ring_shader_pos1.glb',
+                (gltf) => {
+                    const model = gltf.scene;
+                    const box = new THREE.Box3().setFromObject(model);
+                    const center = box.getCenter(new THREE.Vector3());
+                    const size = box.getSize(new THREE.Vector3());
+                    const maxDim = Math.max(size.x, size.y, size.z);
+                    const fitScale = (2.0 * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2))
+                        * camera.position.z * 0.55) / maxDim;
+
+                    model.position.copy(center.negate());
+                    model.scale.setScalar(fitScale);
+                    scene.add(model);
+                    controls.update();
+
+                    loading.style.opacity = '0';
+                    setTimeout(() => { loading.style.display = 'none'; }, 900);
+                },
+                undefined,
+                (err) => {
+                    console.error('[3D Viewer] GLB load error:', err);
+                    loading.innerHTML = `
+                        <div style="text-align:center;padding:20px;">
+                            <i class="fas fa-gem" style="font-size:2rem;color:#c1a35f;margin-bottom:12px;display:block;"></i>
+                            <p style="color:#888;font-size:0.85rem;letter-spacing:1px;">3D preview requires a local server.<br>Open with VS Code Live Server.</p>
+                        </div>`;
+                }
+            );
+
+            const ro = new ResizeObserver(() => {
+                const w = getW();
+                renderer.setSize(w, HEIGHT, false);
+                camera.aspect = w / HEIGHT;
+                camera.updateProjectionMatrix();
+            });
+            ro.observe(wrapper);
+
+            (function animate() {
+                requestAnimationFrame(animate);
+                controls.update();
+                renderer.render(scene, camera);
+            })();
         });
     </script>
+
+    <!-- 3D Card Viewer Scripts (shared module) -->
+    <script type="module">
+        import * as THREE from 'three';
+        import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+        const sharedLoader = new GLTFLoader();
+        let cachedGltf = null;
+
+        async function loadGltf() {
+            if (cachedGltf) return cachedGltf;
+            return new Promise((res, rej) => {
+                sharedLoader.load('images/models/ring_shader_pos1.glb', gltf => {
+                    cachedGltf = gltf;
+                    res(gltf);
+                }, undefined, rej);
+            });
+        }
+
+        function buildCard(canvasId, wrapperId, loaderId, lightColor) {
+            const canvas = document.getElementById(canvasId);
+            const wrapper = document.getElementById(wrapperId);
+            const loader = document.getElementById(loaderId);
+            if (!canvas || !wrapper) return;
+
+            const H = 280;
+            const getW = () => wrapper.getBoundingClientRect().width || 300;
+
+            const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.setSize(getW(), H, false);
+            renderer.toneMapping = THREE.ACESFilmicToneMapping;
+            renderer.toneMappingExposure = 1.5;
+
+            canvas.style.width = '100%';
+            canvas.style.height = H + 'px';
+
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(40, getW() / H, 0.01, 100);
+            camera.position.set(0, 0.4, 3.2);
+
+            const controls = new OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.07;
+            controls.autoRotate = true;
+            controls.autoRotateSpeed = 1.4;
+            controls.enablePan = false;
+
+            // Lighting
+            const key = new THREE.DirectionalLight(0xffe8b0, 4.0);
+            key.position.set(4, 5, 4);
+            scene.add(key);
+            const fill = new THREE.DirectionalLight(lightColor, 2.0);
+            fill.position.set(-3, 2, -3);
+            scene.add(fill);
+            const rim = new THREE.DirectionalLight(0xffd580, 2.5);
+            rim.position.set(0, -3, -5);
+            scene.add(rim);
+            scene.add(new THREE.AmbientLight(0xfff5e0, 0.8));
+            const bounce = new THREE.PointLight(0xc1a35f, 1.5, 15);
+            bounce.position.set(0, -2, 0);
+            scene.add(bounce);
+
+            loadGltf().then(gltf => {
+                const model = gltf.scene.clone(true);
+                const box = new THREE.Box3().setFromObject(model);
+                const center = box.getCenter(new THREE.Vector3());
+                const size = box.getSize(new THREE.Vector3());
+                const maxDim = Math.max(size.x, size.y, size.z);
+                const fitScale = (2.0 * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2))
+                    * camera.position.z * 0.5) / maxDim;
+
+                model.position.copy(center.negate());
+                model.scale.setScalar(fitScale);
+                scene.add(model);
+                controls.target.set(0, 0, 0);
+                controls.update();
+
+                if (loader) {
+                    loader.style.opacity = '0';
+                    setTimeout(() => loader.style.display = 'none', 700);
+                }
+            }).catch(err => {
+                console.error('[3D Card]', canvasId, err);
+            });
+
+            const ro = new ResizeObserver(() => {
+                const w = getW();
+                renderer.setSize(w, H, false);
+                camera.aspect = w / H;
+                camera.updateProjectionMatrix();
+            });
+            ro.observe(wrapper);
+
+            (function tick() {
+                requestAnimationFrame(tick);
+                controls.update();
+                renderer.render(scene, camera);
+            })();
+        }
+
+        window.addEventListener('load', () => {
+            buildCard('canvas-c1', 'wrap-c1', 'load-c1', 0x4488ff);
+            buildCard('canvas-c2', 'wrap-c2', 'load-c2', 0xff4444);
+            buildCard('canvas-c3', 'wrap-c3', 'load-c3', 0x44cc66);
+        });
+    </script>
+    <script src="main.js"></script>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/94711098429?text=Hello%20FACET!%20I%20would%20like%20to%20book%20a%20VIP%20consultation..."
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+        title="Skip the wait! Reach out via WhatsApp for immediate, personalized assistance">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 </body>
+
 </html>
