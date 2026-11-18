@@ -1,4 +1,4 @@
-# FACET Fine Jewelry: gemcity.lk
+# FACET Fine Jewelry
 
 A static website (HTML, CSS, vanilla JavaScript). There is no build step: upload the files to any static host.
 See [REVIEW.md](REVIEW.md) for the code review and the reasons behind the design.
@@ -8,6 +8,9 @@ See [REVIEW.md](REVIEW.md) for the code review and the reasons behind the design
 python3 -m http.server 8000
 ```
 Then open http://localhost:8000. Use a local server rather than double-clicking the HTML file, because JavaScript modules don't run from `file://`.
+
+> **Placeholder email:** the site currently shows `sales@example.com`. Replace it in
+> `assets/js/config.js` and in the HTML pages (search and replace `sales@example.com`).
 
 ## Everyday changes
 

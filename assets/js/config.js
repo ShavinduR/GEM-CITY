@@ -5,10 +5,10 @@
  */
 export const CONFIG = Object.freeze({
   brand: 'FACET',
-  siteUrl: 'https://gemcity.lk/',
+  siteUrl: 'https://facet-seven-xi.vercel.app/',
   whatsapp: '94711098429',            // international format, digits only
   phoneDisplay: '+94 71 109 8429',
-  email: 'sales@gemcity.lk',
+  email: 'sales@example.com',   // TODO: placeholder, replace with your real email (also in the HTML footers)
   showroom: 'World Trade Center, Colombo 01, Sri Lanka',
   baseCurrency: 'LKR',
   currencies: {

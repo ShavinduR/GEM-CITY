@@ -1,4 +1,4 @@
-# FACET / gemcity.lk: code review and redesign
+# FACET Fine Jewelry: code review and redesign
 
 ## 1. What was wrong
 
@@ -8,7 +8,7 @@
 | 1 | **40 broken image paths.** HTML/CSS asked for `hero1.jpg` while the files were `.webp`, and jewellery photos were referenced as `images/jewelleryw/` but stored in `images/ui/jewelleryw/` | Homepage hero was a black box; **every photo on the jewellery page was missing** |
 | 2 | **68 "Inquiry" buttons linked to `#`** | The main conversion action did nothing |
 | 3 | Footer links (Terms, Privacy, Money-back), social icons and the newsletter form all went nowhere | Dead ends at the point of building trust |
-| 4 | Three different emails (`sales@gemcity.lk`, `sales@facet.com`) and two brand names (FACET vs Gem City) | Looks unprofessional; a buyer wonders if it's the same company |
+| 4 | Three different emails (`sales@example.com`, `sales@facet.com`) and two brand names (FACET vs Gem City) | Looks unprofessional; a buyer wonders if it's the same company |
 | 5 | Testimonials duplicated in the HTML (the same 3 reviews twice); two reviewers shared one photo, and all photos were missing | Social proof looked fake |
 | 6 | 23 jewellery photos (mostly pendants and sets) were all filed under "Rings" | Filters returned the wrong products |
 | 7 | Four WebGL canvases rendered the same ring 60× a second, all the time, even off-screen | Heavy battery and CPU drain on phones |

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gemcity.lk/sitemap.xml
+Sitemap: https://facet-seven-xi.vercel.app/sitemap.xml
