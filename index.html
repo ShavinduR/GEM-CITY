@@ -1,1194 +1,361 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FACET | Luxury Ceylon Gems & Global Shipping</title>
-    <meta name="title" content="FACET | Luxury Ceylon Gems & Global Shipping">
-    <meta name="description"
-        content="FACET offers the world's finest Ceylon Sapphires, Rubies, and custom fine jewelry. Ethical mining, global insured shipping, and GIA certification.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gemcity.lk/">
-    <meta property="og:title" content="FACET | Luxury Ceylon Gems & Global Shipping">
-    <meta property="og:description"
-        content="Discover rare Ceylon gemstones and handcrafted luxury jewelry. Ethically sourced, globally delivered.">
-    <meta property="og:image" content="https://gemcity.lk/images/ui/hero1.jpg">
-    <link rel="icon" href="images/logoicon/faviconfacet.png" type="image/png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Task 3: JSON-LD LocalBusiness Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "JewelryStore",
-      "name": "FACET",
-      "url": "https://gemcity.lk/",
-      "logo": "https://gemcity.lk/images/ui/hero1.jpg",
-      "image": "https://gemcity.lk/images/ui/hero1.jpg",
-      "description": "Premium Ceylon Gems from Ratnapura. Worldwide FedEx shipping, GIA & NGJA certified sapphires and rubies.",
-      "telephone": "+94711098429",
-      "email": "sales@gemcity.lk",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "World Trade Center",
-        "addressLocality": "Colombo 01",
-        "addressCountry": "LK"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Ceylon Gems & Jewellery"
-      },
-      "brand": {
-        "@type": "Brand",
-        "name": "FACET"
-      },
-      "hasCertification": [
-        { "@type": "Certification", "name": "GIA" },
-        { "@type": "Certification", "name": "NGJA" }
-      ],
-      "sameAs": [
-        "https://www.facebook.com/gemcity",
-        "https://www.instagram.com/gemcity"
-      ]
-    }
-    </script>
-
-    <!-- STYLES MOVED TO style.css -->
-    <!--<style>
-        :root {
-            --primary: #c1a35f;
-            /* Luxury Gold */
-            --primary-dark: #a3863d;
-            --dark: #0a0a0a;
-            --dark-gray: #1a1a1a;
-            --light: #f5f5f5;
-            --white: #ffffff;
-            --text-gray: #b3b3b3;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--dark);
-            color: var(--white);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* --- NAVIGATION --- */
-        nav {
-            background: rgba(10, 10, 10, 0.95);
-            padding: 20px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-        }
-
-        .nav-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--white);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            letter-spacing: 1px;
-        }
-
-        .nav-logo span {
-            color: var(--primary);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 35px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--light);
-            font-weight: 500;
-            transition: 0.3s;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        /* --- HERO SECTION (Cinematic Video-Like Effect) --- */
-        .hero {
-            height: 90vh;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            overflow: hidden;
-        }
-
-        .hero-slider {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        .hero-slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            opacity: 0;
-            transform: scale(1);
-            /* Start normal size */
-            /* This transition creates the smooth video-like effect */
-            transition: opacity 2s ease-in-out, transform 10s linear;
-        }
-
-        .hero1 {
-            background-image: url('images/ui/hero1.jpg');
-        }
-
-        .hero2 {
-            background-image: url('images/ui/hero2.jpg');
-        }
-
-        .hero3 {
-            background-image: url('images/ui/hero3.jpg');
-        }
-
-        .hero-slide.active {
-            opacity: 1;
-            transform: scale(1.15);
-            /* Slowly zooms in while active */
-        }
-
-        .hero-overlay {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8));
-        }
-
-        .hero-content {
-            z-index: 2;
-            padding: 20px;
-        }
-
-        .hero-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 5vw, 5rem);
-            margin-bottom: 20px;
-            line-height: 1.1;
-            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            max-width: 700px;
-            margin-inline: auto;
-            color: #ddd;
-            font-weight: 300;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-        }
-
-        .btn-luxury {
-            background: var(--primary);
-            color: var(--dark);
-            padding: 15px 40px;
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 2px;
-            transition: 0.3s;
-            display: inline-block;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border: 1px solid var(--primary);
-        }
-
-        .btn-luxury:hover {
-            background: transparent;
-            color: var(--primary);
-        }
-
-        /* --- TRUST BADGES --- */
-        .trust-section {
-            background: var(--white);
-            color: var(--dark);
-            padding: 60px 5%;
-        }
-
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .trust-item {
-            transition: transform 0.3s ease;
-            padding: 10px;
-            cursor: pointer;
-        }
-
-        .trust-item:hover {
-            transform: translateY(-10px);
-        }
-
-        .trust-item i {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        .trust-item h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-
-        .trust-item p {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        /* --- HERITAGE SECTION --- */
-        .heritage-section {
-            padding: 80px 5%;
-            text-align: center;
-            background: var(--dark-gray);
-        }
-
-        .heritage-content {
-            max-width: 800px;
-            margin: auto;
-        }
-
-        .heritage-content h2 {
-            font-family: 'Playfair Display', serif;
-            color: var(--primary);
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .heritage-content p {
-            color: #ccc;
-            margin-bottom: 30px;
-            font-size: 1.1rem;
-        }
-
-        /* --- CHOICE SECTION --- */
-        .choice-section {
-            padding: 80px 5%;
-            text-align: center;
-            background: #0d0d0d;
-        }
-
-        .choice-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: var(--white);
-        }
-
-        .choice-container {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            max-width: 1000px;
-            margin: auto;
-            flex-wrap: wrap;
-        }
-
-        .choice-card {
-            flex: 1;
-            min-width: 300px;
-            padding: 80px 20px;
-            text-decoration: none;
-            border-radius: 8px;
-            color: white;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: 0.4s ease;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .choice-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: 1;
-            transition: 0.4s ease;
-        }
-
-        .choice-card:hover::before {
-            background: rgba(0, 0, 0, 0.3);
-        }
-
-        .choice-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(193, 163, 95, 0.2);
-            border-color: var(--primary);
-        }
-
-        .choice-card h3 {
-            position: relative;
-            z-index: 2;
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-            color: var(--primary);
-            transition: 0.3s;
-        }
-
-        .choice-card p {
-            position: relative;
-            z-index: 2;
-            font-size: 1.1rem;
-            color: #ddd;
-        }
-
-        .choice-card:hover h3 {
-            color: var(--white);
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-        }
-
-        .gem-bg {
-            background-image: url('images/ui/hero2.jpg');
-        }
-
-        .jewelry-bg {
-            background-image: url('images/ui/hero1.jpg');
-        }
-
-        /* --- TESTIMONIALS (Updated for Better Photos) --- */
-        .testimonial-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('images/ui/mine-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            padding: 80px 0;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .section-title {
-            text-align: center;
-            color: var(--white);
-            margin-bottom: 50px;
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-        }
-
-        .section-title span {
-            color: var(--primary);
-            font-style: italic;
-        }
-
-        .slider-wrap {
-            width: 100%;
-            overflow: hidden;
-            display: flex;
-        }
-
-        .t-track {
-            display: flex;
-            width: max-content;
-            animation: scroll 40s linear infinite;
-        }
-
-        .slider-wrap:hover .t-track {
-            animation-play-state: paused;
-        }
-
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            padding: 30px;
-            width: 380px;
-            margin: 0 20px;
-            flex-shrink: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .glass-card p {
-            font-style: italic;
-            color: #ddd;
-            font-size: 1rem;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        /* Client Info Styling - Updated */
-        .client-info {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 15px;
-        }
-
-        /* Big Customer Photo */
-        .client-img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--primary);
-        }
-
-        .client-details h4 {
-            color: var(--white);
-            font-size: 1rem;
-            margin-bottom: 4px;
-        }
-
-        /* Small & Sharp Flag */
-        .country-info {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.85rem;
-            color: #bbb;
-        }
-
-        .flag-icon {
-            width: 24px;
-            height: auto;
-            border-radius: 3px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-
-        /* --- FOOTER STYLES --- */
-        footer {
-            background: #050505;
-            color: #a0a0a0;
-            padding-top: 70px;
-            border-top: 1px solid #222;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.95rem;
-        }
-
-        .footer-grid {
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
-            padding-bottom: 50px;
-        }
-
-        .footer-heading {
-            color: #fff;
-            font-family: 'Playfair Display', serif;
-            letter-spacing: 1px;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            font-size: 1.1rem;
-        }
-
-        .footer-link {
-            color: #a0a0a0;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transition: 0.3s;
-            margin-bottom: 12px;
-        }
-
-        .footer-link:hover {
-            color: var(--primary);
-            transform: translateX(5px);
-        }
-
-        .footer-icon {
-            color: var(--primary);
-            width: 20px;
-            text-align: center;
-        }
-
-        /* Floating WhatsApp */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25d366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            transition: 0.3s;
-            text-decoration: none;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            background: #128c7e;
-        }
-
-        .founder-container {
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-
-        .founder-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #c1a35f;
-        }
-
-        .founder-info h5 {
-            color: #fff;
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-
-        .founder-info p {
-            font-size: 0.85rem;
-            color: #c1a35f;
-            font-style: italic;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 10px;
-        }
-
-        .social-link {
-            width: 35px;
-            height: 35px;
-            background: #222;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .social-link:hover {
-            background: var(--primary);
-            color: #000;
-        }
-
-        .promise-links {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .contact-item {
-            margin-bottom: 15px;
-            display: flex;
-            gap: 10px;
-        }
-
-        .contact-item i {
-            margin-top: 5px;
-        }
-
-        .newsletter-box {
-            background: #111;
-            padding: 15px;
-            border-radius: 5px;
-            border: 1px solid #333;
-        }
-
-        .newsletter-box p {
-            color: #fff;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: 5px;
-        }
-
-        .footer-contact-info {
-            margin-bottom: 20px;
-        }
-
-        .newsletter-form input {
-            background: #222;
-            border: 1px solid #444;
-            padding: 8px;
-            color: #fff;
-            width: 100%;
-            border-radius: 2px;
-            outline: none;
-        }
-
-        .newsletter-form button {
-            background: var(--primary);
-            color: #000;
-            border: none;
-            padding: 8px 15px;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 2px;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #222;
-            background: #000;
-            padding: 20px 0;
-        }
-
-        .footer-bottom-content {
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 20px;
-            text-align: center;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .footer-bottom-content p {
-            font-size: 0.85rem;
-        }
-
-        .payment-icons {
-            font-size: 1.8rem;
-            display: flex;
-            gap: 15px;
-            opacity: 0.7;
-        }
-
-        .payment-icons i {
-            color: #fff;
-        }
-
-        .menu-toggle {
-            display: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .menu-toggle:hover {
-            color: var(--primary);
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                right: 0;
-                width: 100%;
-                background: rgba(10, 10, 10, 0.98);
-                padding: 20px 0;
-                text-align: center;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links li {
-                margin: 15px 0;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .trust-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        .showroom-title {
-            color: #fff;
-        }
-
-        .founder-quote {
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .heritage-link {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: bold;
-            border-bottom: 1px solid var(--primary);
-        }
-    </style>-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FACET | Natural Ceylon Sapphires &amp; Fine Jewellery from Sri Lanka</title>
+  <meta name="description" content="Hand-selected natural Ceylon sapphires and fine jewellery from Ratnapura. Lab-reported gems, live video viewing before you buy, and fully insured worldwide delivery.">
+  <link rel="canonical" href="https://gemcity.lk/">
+  <meta name="theme-color" content="#0b0b0c">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FACET Fine Jewelry">
+  <meta property="og:title" content="FACET | Natural Ceylon Sapphires &amp; Fine Jewellery from Sri Lanka">
+  <meta property="og:description" content="Hand-selected natural Ceylon sapphires and fine jewellery from Ratnapura. Lab-reported gems, live video viewing before you buy, and fully insured worldwide delivery.">
+  <meta property="og:url" content="https://gemcity.lk/">
+  <meta property="og:image" content="https://gemcity.lk/images/opt/hero-set-1440.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="images/opt/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="images/opt/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preload" href="assets/fonts/montserrat-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="images/opt/hero-set-1080.webp" imagesrcset="images/opt/hero-set-640.webp 640w, images/opt/hero-set-1080.webp 1080w, images/opt/hero-set-1440.webp 1440w" imagesizes="(max-width: 900px) 100vw, 50vw" fetchpriority="high">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <script type="module" src="assets/js/main.js"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"JewelryStore","@id":"https://gemcity.lk/#store","name":"FACET Fine Jewelry","url":"https://gemcity.lk/","logo":"https://gemcity.lk/images/opt/icon-512.png","image":"https://gemcity.lk/images/opt/hero-set-1440.webp","description":"Natural Ceylon sapphires and handcrafted fine jewellery from Ratnapura, Sri Lanka. Lab-reported gems, live video viewing and insured worldwide delivery.","telephone":"+94711098429","email":"sales@gemcity.lk","priceRange":"LKR 35,000 – LKR 1,200,000","address":{"@type":"PostalAddress","streetAddress":"World Trade Center","addressLocality":"Colombo 01","addressCountry":"LK"},"areaServed":"Worldwide","paymentAccepted":"Bank transfer, Credit card, PayPal, Koko, Mintpay"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"FACET Fine Jewelry","url":"https://gemcity.lk/"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is it safe to buy a gemstone online from Sri Lanka?","acceptedAnswer":{"@type":"Answer","text":"Yes, and we make it verifiable. Before you pay, we show you the actual stone on a live video call in natural light, together with its original gem lab report. Every parcel is shipped fully insured with tracking, and you are covered by our 14-day money-back guarantee."}},{"@type":"Question","name":"Are your gems natural and certified?","acceptedAnswer":{"@type":"Answer","text":"Every stone we sell is natural and comes with a gemmological report. For premium stones we provide reports from internationally recognised laboratories such as NGJA (Sri Lanka), GIA or GRS. The report for each stone is shown in its listing and on request before purchase."}},{"@type":"Question","name":"How does international shipping work?","acceptedAnswer":{"@type":"Answer","text":"We ship worldwide with FedEx or DHL, fully insured and tracked door to door, including to the USA, UK, Europe, the Middle East and Asia. Import duties and taxes in your country, if any, are payable on delivery."}},{"@type":"Question","name":"What is your return policy?","acceptedAnswer":{"@type":"Answer","text":"If a stone does not match its description, return it within 14 days of delivery in its original condition, with its report, for a full refund. See our returns policy for details."}},{"@type":"Question","name":"How can I pay?","acceptedAnswer":{"@type":"Answer","text":"International clients pay by bank transfer or card. In Sri Lanka you can also spread the cost with Koko or Mintpay instalment plans. Payment is only requested after you have seen the stone and agreed the final price."}},{"@type":"Question","name":"Can you set a stone into a custom piece of jewellery?","acceptedAnswer":{"@type":"Answer","text":"Yes. Our goldsmiths in Sri Lanka handcraft rings, pendants and earrings in gold or silver around the stone you choose. Share your idea on WhatsApp and we will send design sketches and a quote."}}]}</script>
 </head>
-
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <p class="announce">Live video viewing before you buy &middot; Insured worldwide delivery &middot; <a href="https://wa.me/94711098429?text=Hello%20FACET%21%20I%20have%20a%20question." target="_blank" rel="noopener">Chat with our gemologist</a></p>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html" aria-label="FACET Fine Jewelry — home">
+        <img src="images/opt/logo-mark.webp" alt="" width="30" height="39">
+        <span class="brand__name"><strong>FACET</strong><span>Fine Jewelry</span></span>
+      </a>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <ul class="nav__list" role="list"><li><a class="nav__link" href="all-gems.html">Gems</a></li><li><a class="nav__link" href="jewellery.html">Jewellery</a></li><li><a class="nav__link" href="blog.html">Journal</a></li><li><a class="nav__link" href="contact.html">Contact</a></li></ul>
+        <div class="nav__cta-mobile">
+          <a class="btn btn--wa btn--block" href="https://wa.me/94711098429?text=Hello%20FACET%21%20I%20would%20like%20some%20help%20choosing%20a%20gem." target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-whatsapp"/></svg> Chat on WhatsApp</a>
+          <a class="btn btn--ghost btn--block" href="contact.html?interest=private-viewing"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-calendar"/></svg> Book a private viewing</a>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <div class="currency"><label class="visually-hidden" for="currency-index">Display prices in</label><select id="currency-index" data-currency-select><option value="LKR">LKR</option><option value="USD">USD</option><option value="GBP">GBP</option><option value="EUR">EUR</option><option value="AUD">AUD</option></select><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-chevron-down"/></svg></div>
+        <a class="btn btn--wa btn--sm" href="https://wa.me/94711098429?text=Hello%20FACET%21%20I%20would%20like%20some%20help%20choosing%20a%20gem." target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-whatsapp"/></svg> Talk to an expert</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+          <svg class="icon icon--menu" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-menu"/></svg><svg class="icon icon--close" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-close"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
 
-    <nav>
-        <a href="index.html" class="nav-logo"
-            style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
-            <img src="images/logoicon/webpro.png" alt="FACET Logo" style="height:55px;width:auto;">
-            <div style="display: flex; flex-direction: column; line-height: 1;">
-                <span
-                    style="font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: #fff; letter-spacing: 2px;">FACET</span>
-                <span
-                    style="font-family: 'Montserrat', sans-serif; font-size: 0.65rem; font-weight: 300; color: #D4AF37; letter-spacing: 3px; margin-top: 4px;">FINE
-                    JEWELRY</span>
-            </div>
-        </a>
-        <ul class="nav-links" id="nav-links">
-            <li><a href="all-gems.html">Gem Collection</a></li>
-            <li><a href="jewellery.html">Jewellery</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li class="currency-selector-container" style="margin-left: 20px; display: flex; align-items: center;">
-                <select id="currency-selector"
-                    style="background: transparent; color: var(--primary); border: 1px solid rgba(212, 175, 55, 0.3); padding: 4px 8px; border-radius: 4px; font-family: 'Montserrat', sans-serif; font-size: 0.8rem; cursor: pointer; outline: none;">
-                    <option value="LKR">LKR</option>
-                    <option value="USD">USD</option>
-                    <option value="GBP">GBP</option>
-                </select>
-            </li>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__content">
+        <p class="eyebrow">Ratnapura, Sri Lanka &rarr; worldwide</p>
+        <h1 id="hero-title">Rare Ceylon gems, <em>direct from the source.</em></h1>
+        <p class="hero__lead">Hand-selected natural sapphires and fine jewellery from Sri Lanka's City of Gems. Every stone is lab-reported and shown to you on live video before you buy.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--primary" href="all-gems.html">Explore the gems <svg class="icon icon--arrow" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-arrow"/></svg></a>
+          <a class="btn btn--ghost" href="https://wa.me/94711098429?text=Hello%20FACET%21%20I%20would%20like%20some%20help%20choosing%20a%20gem." target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-whatsapp"/></svg> Chat with a gemologist</a>
+        </div>
+        <ul class="hero__proof" role="list">
+          <li><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-video"/></svg> Live video before you pay</li>
+          <li><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-return"/></svg> 14-day money-back</li>
+          <li><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-globe"/></svg> Insured worldwide delivery</li>
         </ul>
-        <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
-    </nav>
-
-    <header class="hero">
-        <div class="hero-slider">
-            <div class="hero-slide hero1 active"></div>
-            <div class="hero-slide hero2"></div>
-            <div class="hero-slide hero3"></div>
-        </div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Rare Ceylon Treasures</h1>
-            <p>Ethically sourced, GIA & NGJA certified natural gemstones. <br>Delivered securely from Sri Lanka to the
-                World.</p>
-            <a href="all-gems.html" class="btn-luxury">Explore Collection</a>
-        </div>
-    </header>
-
-    <section class="trust-section">
-        <div class="trust-grid">
-            <div class="trust-item">
-                <i class="fas fa-plane-departure"></i>
-                <h3>Global Shipping</h3>
-                <p>Insured FedEx & DHL delivery to USA, UK, Europe & Asia.</p>
-            </div>
-            <div class="trust-item">
-                <i class="fas fa-certificate"></i>
-                <h3>Certified Authenticity</h3>
-                <p>Every gem comes with NGJA, GIA or GRS certificates.</p>
-            </div>
-            <div class="trust-item">
-                <i class="fas fa-gem"></i>
-                <h3>Direct from Source</h3>
-                <p>Mined and cut in Ratnapura, Sri Lanka.</p>
-            </div>
-            <div class="trust-item">
-                <i class="fas fa-lock"></i>
-                <h3>Secure Transactions</h3>
-                <p>Bank Transfer & Online Payment options available.</p>
-            </div>
-        </div>
+      </div>
+      <div class="hero__media">
+        <img src="images/opt/hero-set-1080.webp" srcset="images/opt/hero-set-640.webp 640w, images/opt/hero-set-1080.webp 1080w, images/opt/hero-set-1440.webp 1440w" sizes="(max-width: 900px) 100vw, 50vw"
+             alt="Halo drop pendant and matching earrings with sky-blue gemstones, displayed on a black velvet bust" width="1440" height="1800" fetchpriority="high">
+        <a class="hero__tag" href="jewellery.html#FJ-01"><span>Featured piece &middot; Ref. FJ-01</span><strong>Halo Drop Pendant &amp; Earring Set</strong></a>
+      </div>
     </section>
 
-    <section class="heritage-section">
-        <div class="heritage-content">
-            <h2>The Legacy of Ceylon</h2>
-            <p>"For centuries, the island of Sri Lanka has given the world its most brilliant sapphires. At FACET, we
-                continue this tradition by hand-selecting only the finest stones directly from the mines of Ratnapura."
-            </p>
-            <a href="all-gems.html" class="heritage-link">VIEW OUR GEMS</a>
-        </div>
+    <section aria-label="Why buy from FACET">
+      <div class="container trust-bar" data-reveal-group>
+        <div class="trust-bar__item" data-reveal><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-gem"/></svg><div><strong>Direct from Ratnapura</strong><span>No middlemen, origin pricing</span></div></div>
+        <div class="trust-bar__item" data-reveal><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-award"/></svg><div><strong>Lab-reported gems</strong><span>NGJA, GIA or GRS documentation</span></div></div>
+        <div class="trust-bar__item" data-reveal><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-globe"/></svg><div><strong>Insured worldwide</strong><span>FedEx &amp; DHL, tracked door to door</span></div></div>
+        <div class="trust-bar__item" data-reveal><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-card"/></svg><div><strong>Flexible payment</strong><span>Bank transfer, card, Koko &amp; Mintpay</span></div></div>
+      </div>
     </section>
 
-    <section class="choice-section">
-        <h2>What are you going to buy?</h2>
-        <div class="choice-container">
-            <a href="all-gems.html" class="choice-card gem-bg">
-                <h3>Gems</h3>
-                <p>Explore our precious gemstone collection.</p>
-            </a>
-            <a href="jewellery.html" class="choice-card jewelry-bg">
-                <h3>Jewelry</h3>
-                <p>Discover handcrafted fine jewelry.</p>
-            </a>
+    <section class="section" aria-labelledby="collections-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">The collection</p>
+          <h2 id="collections-title">Find your piece of Ceylon</h2>
+          <p>Choose a loose stone to keep or set, browse finished jewellery, or have something made only for you.</p>
         </div>
+        <div class="cat-grid" data-reveal-group>
+          <article class="cat-card" data-reveal>
+            <img src="images/opt/cat-gems-960.webp" srcset="images/opt/cat-gems-640.webp 640w, images/opt/cat-gems-960.webp 960w" sizes="(max-width: 560px) 100vw, (max-width: 960px) 100vw, 40vw" alt="" width="960" height="960" loading="lazy" decoding="async">
+            <div class="cat-card__body">
+              <h3>Loose Ceylon gems</h3>
+              <p>Blue, pink, yellow and purple sapphires and vivid spinels, each with its lab report.</p>
+              <a class="link-arrow" href="all-gems.html">Shop gems <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-arrow"/></svg></a>
+            </div>
+          </article>
+          <article class="cat-card" data-reveal>
+            <img src="images/opt/cat-jewellery-960.webp" srcset="images/opt/cat-jewellery-640.webp 640w, images/opt/cat-jewellery-960.webp 960w" sizes="(max-width: 560px) 100vw, 30vw" alt="" width="960" height="1200" loading="lazy" decoding="async">
+            <div class="cat-card__body">
+              <h3>Fine jewellery</h3>
+              <p>Pendants, rings and sets, handcrafted around Ceylon stones.</p>
+              <a class="link-arrow" href="jewellery.html">Shop jewellery <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-arrow"/></svg></a>
+            </div>
+          </article>
+          <article class="cat-card" data-reveal>
+            <img src="images/opt/cat-bespoke-960.webp" srcset="images/opt/cat-bespoke-640.webp 640w, images/opt/cat-bespoke-960.webp 960w" sizes="(max-width: 560px) 100vw, 30vw" alt="" width="960" height="960" loading="lazy" decoding="async">
+            <div class="cat-card__body">
+              <h3>Bespoke design</h3>
+              <p>Your stone, your design: engagement rings and heirlooms made to order.</p>
+              <a class="link-arrow" href="contact.html?interest=custom-jewellery">Start a design <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-arrow"/></svg></a>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section class="journal-section" style="padding: 100px 5%; background: var(--dark);">
-        <div style="max-width: 1200px; margin: auto; text-align: center;">
-            <h2
-                style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--primary); margin-bottom: 50px;">
-                FACET Journal</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
-                <article
-                    style="background: #111; border: 1px solid #222; border-radius: 8px; overflow: hidden; transition: 0.3s; text-align: left;">
-                    <img src="images/ui/hero2.jpg" alt="Ethical Mining"
-                        style="width: 100%; height: 250px; object-fit: cover;">
-                    <div style="padding: 30px;">
-                        <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 15px; color: #fff;">The
-                            Ethical Mining Heritage of Ratnapura</h3>
-                        <p style="color: #ccc; font-size: 0.95rem; margin-bottom: 20px;">Discover why Sri Lanka's
-                            artisanal gem mining process is globally recognized for sustainability.</p>
-                        <a href="article-ethical-mining.html"
-                            style="color: var(--primary); text-decoration: none; font-weight: bold;">Read Story <i
-                                class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-                <article
-                    style="background: #111; border: 1px solid #222; border-radius: 8px; overflow: hidden; transition: 0.3s; text-align: left;">
-                    <img src="images/ui/hero3.jpg" alt="Gemstone Investment"
-                        style="width: 100%; height: 250px; object-fit: cover;">
-                    <div style="padding: 30px;">
-                        <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 15px; color: #fff;">Ceylon
-                            Sapphire as a Tangible Investment</h3>
-                        <p style="color: #ccc; font-size: 0.95rem; margin-bottom: 20px;">Why unheated natural sapphires
-                            are outperforming traditional asset classes in wealth preservation.</p>
-                        <a href="article-investment.html"
-                            style="color: var(--primary); text-decoration: none; font-weight: bold;">Learn More <i
-                                class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-            </div>
-            <div style="margin-top: 50px;">
-                <a href="blog.html" class="heritage-link">EXPLORE ALL ARTICLES</a>
-            </div>
+    <section class="section section--surface" aria-labelledby="new-jewellery-title">
+      <div class="container" data-catalog="jewellery" data-featured data-limit="4">
+        <div class="section-head section-head--split" data-reveal>
+          <div>
+            <p class="eyebrow">Handcrafted in Sri Lanka</p>
+            <h2 id="new-jewellery-title">Fine jewellery</h2>
+          </div>
+          <a class="link-arrow" href="jewellery.html">View all jewellery <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-arrow"/></svg></a>
         </div>
+        <div class="product-grid" data-grid><noscript><p><a class="gold" href="jewellery.html">Browse the jewellery collection</a></p></noscript></div>
+      </div>
     </section>
 
-    <section class="testimonial-section">
-        <h2 class="section-title">Client <span>Stories</span></h2>
-
-        <div class="slider-wrap">
-            <div class="t-track">
-
-                <div class="glass-card">
-                    <p>"I was hesitant to buy online, but the GIA certificate gave me confidence. The Blue Sapphire is
-                        stunning!"</p>
-                    <div class="client-info">
-                        <img src="images/client1.jpg" alt="Client" class="client-img" loading="lazy">
-                        <div class="client-details">
-                            <h4>James Wilson</h4>
-                            <div class="country-info">
-                                <img src="https://flagcdn.com/w80/gb.png" class="flag-icon" alt="UK" loading="lazy">
-                                <span>London, UK</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card">
-                    <p>"The custom ring design was perfect. Arrived in New York within 5 days via FedEx."</p>
-                    <div class="client-info">
-                        <img src="images/client3.jpg" alt="Client" class="client-img" loading="lazy">
-                        <div class="client-details">
-                            <h4>Michael Ross</h4>
-                            <div class="country-info">
-                                <img src="https://flagcdn.com/w80/us.png" class="flag-icon" alt="USA" loading="lazy">
-                                <span>New York, USA</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card">
-                    <p>"Honest sellers. They showed me the stone via video call before I paid. Highly recommended."</p>
-                    <div class="client-info">
-                        <img src="images/client2.jpg" alt="Client" class="client-img" loading="lazy">
-                        <div class="client-details">
-                            <h4>Sophia Chen</h4>
-                            <div class="country-info">
-                                <img src="https://flagcdn.com/w80/sg.png" class="flag-icon" alt="Singapore"
-                                    loading="lazy">
-                                <span>Singapore</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card">
-                    <p>"Excellent packaging and communication. The Ruby I bought is a true treasure."</p>
-                    <div class="client-info">
-                        <img src="images/client1.jpg" alt="Client" class="client-img" loading="lazy">
-                        <div class="client-details">
-                            <h4>Ahmed Al-Fayed</h4>
-                            <div class="country-info">
-                                <img src="https://flagcdn.com/w80/ae.png" class="flag-icon" alt="UAE" loading="lazy">
-                                <span>Dubai, UAE</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card">
-                    <p>"I was hesitant to buy online, but the GIA certificate gave me confidence. The Blue Sapphire is
-                        stunning!"</p>
-                    <div class="client-info">
-                        <img src="images/client1.jpg" alt="Client" class="client-img" loading="lazy">
-                        <div class="client-details">
-                            <h4>James Wilson</h4>
-                            <div class="country-info">
-                                <img src="https://flagcdn.com/w80/gb.png" class="flag-icon" alt="UK" loading="lazy">
-                                <span>London, UK</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="glass-card">
-                    <p>"The custom ring design was perfect. Arrived in New York within 5 days via FedEx."</p>
-                    <div class="client-info">
-                        <img src="images/client3.jpg" alt="Client" class="client-img" loading="lazy">
-                        <div class="client-details">
-                            <h4>Michael Ross</h4>
-                            <div class="country-info">
-                                <img src="https://flagcdn.com/w80/us.png" class="flag-icon" alt="USA" loading="lazy">
-                                <span>New York, USA</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="glass-card">
-                    <p>"Honest sellers. They showed me the stone via video call before I paid. Highly recommended."</p>
-                    <div class="client-info">
-                        <img src="images/client2.jpg" alt="Client" class="client-img" loading="lazy">
-                        <div class="client-details">
-                            <h4>Sophia Chen</h4>
-                            <div class="country-info">
-                                <img src="https://flagcdn.com/w80/sg.png" class="flag-icon" alt="Singapore"
-                                    loading="lazy">
-                                <span>Singapore</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+    <section class="section section--ivory" id="how-it-works" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-head section-head--center" data-reveal>
+          <p class="eyebrow">How buying works</p>
+          <h2 id="how-title">Simple, transparent, fully insured</h2>
+          <p>Buying a precious stone from the other side of the world should feel as safe as buying it in person. Here is how we make sure it does.</p>
         </div>
+        <ol class="steps" data-reveal-group>
+          <li class="step" data-reveal><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-gem"/></svg><h3>Choose your stone</h3><p>Browse the collection or tell us the colour, size and budget you have in mind. We also source to order.</p></li>
+          <li class="step" data-reveal><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-video"/></svg><h3>See it live</h3><p>We show you the actual stone on a video call in natural light, together with its original lab report.</p></li>
+          <li class="step" data-reveal><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-lock"/></svg><h3>Pay securely</h3><p>Only once you are happy: bank transfer or card, with Koko and Mintpay instalments in Sri Lanka.</p></li>
+          <li class="step" data-reveal><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-package"/></svg><h3>Insured delivery</h3><p>FedEx or DHL, insured and tracked to your door, backed by our 14-day money-back guarantee.</p></li>
+        </ol>
+        <p style="text-align:center;margin-top:var(--s-7)"><a class="btn btn--dark" href="https://wa.me/94711098429?text=Hello%20FACET%21%20I%20would%20like%20to%20start%20with%20a%20question%20about%20buying%20a%20gem." target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-whatsapp"/></svg> Start with a question</a></p>
+      </div>
     </section>
 
-    <section class="showroom-section">
-        <div class="showroom-container">
-            <div class="showroom-text">
-                <h2
-                    style="font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--primary); margin-bottom: 25px;">
-                    Schedule Your Private Viewing
-                </h2>
-                <p style="font-size: 1.15rem; color: #ccc; line-height: 1.8; margin-bottom: 30px;">
-                    Experience the brilliance of our carefully curated gemstones in person. Book a private, one-on-one
-                    consultation with our Gemologist at our World Trade Center suite, at your convenience.
-                </p>
-                <div class="showroom-details"
-                    style="margin-bottom: 40px; display: flex; flex-direction: column; gap: 15px;">
-                    <p
-                        style="display: flex; align-items: center; gap: 15px; font-size: 1.1rem; color: #fff; margin: 0;">
-                        <i class="fas fa-calendar-check"
-                            style="color: var(--primary); width: 20px; text-align: center;"></i>
-                        By Appointment Only
-                    </p>
-                    <p
-                        style="display: flex; align-items: center; gap: 15px; font-size: 1.1rem; color: #fff; margin: 0;">
-                        <i class="fas fa-map-marker-alt"
-                            style="color: var(--primary); width: 20px; text-align: center;"></i>
-                        <strong>World Trade Center, Colombo 01</strong>
-                    </p>
-                </div>
-                <a href="contact.html#inquiry-form" class="btn-luxury"
-                    style="display: inline-flex; align-items: center; gap: 10px;">
-                    BOOK YOUR APPOINTMENT <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-            <div class="showroom-image">
-                <img src="images/ui/hero2.jpg" alt="FACET Showroom" loading="lazy">
-            </div>
+    <section class="section" aria-labelledby="new-gems-title">
+      <div class="container" data-catalog="gems" data-featured data-limit="4">
+        <div class="section-head section-head--split" data-reveal>
+          <div>
+            <p class="eyebrow">Hand-picked this month</p>
+            <h2 id="new-gems-title">Featured Ceylon gems</h2>
+          </div>
+          <a class="link-arrow" href="all-gems.html">View all gems <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-arrow"/></svg></a>
         </div>
+        <div class="product-grid" data-grid><noscript><p><a class="gold" href="all-gems.html">Browse the full gem collection</a></p></noscript></div>
+      </div>
     </section>
 
-    <footer id="contact">
-        <div class="footer-grid">
-
-            <div>
-                <h4 class="footer-heading">Meet the Founder</h4>
-
-                <div class="founder-container">
-                    <img src="images/ui/me.png" alt="Founder" class="founder-img" loading="lazy">
-                    <div class="founder-info">
-                        <h5>Shavindu</h5>
-                        <p>Gemologist & Founder</p>
-                    </div>
-                </div>
-
-                <p class="founder-quote">
-                    "We don't just sell gems; we share the heritage of Ceylon. Every stone is handpicked from the mines
-                    of Ratnapura to ensure you get nothing but the best."
-                </p>
-
-                <div class="social-links">
-                    <a href="#" class="social-link" title="Facebook" aria-label="Facebook"><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-link" title="Instagram" aria-label="Instagram"><i
-                            class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link" title="LinkedIn" aria-label="LinkedIn"><i
-                            class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-
-            <div>
-                <h4 class="footer-heading">Customer Promise</h4>
-                <div class="promise-links">
-                    <a href="#" class="footer-link"><i class="fas fa-undo footer-icon"></i> 14-Day Money Back
-                        Guarantee</a>
-                    <a href="#" class="footer-link"><i class="fas fa-shipping-fast footer-icon"></i> Worldwide Insured
-                        Shipping</a>
-                    <a href="#" class="footer-link"><i class="fas fa-certificate footer-icon"></i> GIA/NGJA Authenticity
-                        Reports</a>
-                    <a href="#" class="footer-link"><i class="fas fa-shield-alt footer-icon"></i> Privacy & Data
-                        Protection</a>
-                    <a href="#" class="footer-link"><i class="fas fa-file-contract footer-icon"></i> Terms &
-                        Conditions</a>
-                </div>
-            </div>
-
-            <div>
-                <h4 class="footer-heading">Visit & Contact</h4>
-
-                <div class="contact-item">
-                    <i class="fas fa-building footer-icon"></i>
-                    <div>
-                        <strong class="showroom-title">Colombo Showroom</strong><br>
-                        World Trade Center, Colombo 01.
-                    </div>
-                </div>
-
-                <div class="footer-contact-info">
-                    <p><i class="fas fa-envelope footer-icon"></i> sales@gemcity.lk</p><br>
-                    <p><i class="fas fa-phone footer-icon"></i> +94 71 109 8429</p>
-                </div>
-
-                <div class="newsletter-box">
-                    <p>Join our exclusive gem collectors list:</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Your Email">
-                        <button type="submit">JOIN</button>
-                    </form>
-                </div>
-            </div>
-
+    <section class="section section--surface" aria-labelledby="story-title">
+      <div class="container split">
+        <figure class="split__media" data-reveal>
+          <img src="images/opt/source-river-900.webp" alt="A miner panning gem gravel in a river in Ratnapura" width="900" height="600" loading="lazy" decoding="async">
+          <figcaption>Gem gravel is still panned by hand in the rivers of Ratnapura.</figcaption>
+        </figure>
+        <div class="split__body" data-reveal>
+          <p class="eyebrow">Our story</p>
+          <h2 id="story-title">From the riverbeds of Ratnapura to your hands</h2>
+          <p>For over two thousand years, the valleys of Ratnapura, the "City of Gems", have given the world its finest sapphires. FACET buys directly from the miners and cutters there, so you receive the true origin price and a clear story for every stone.</p>
+          <ul class="check-list" role="list">
+            <li><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-check"/></svg><span><strong>No middlemen.</strong> Sourced from the mine, not from a chain of dealers.</span></li>
+            <li><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-check"/></svg><span><strong>Hand-selected by a gemologist.</strong> Every stone is examined before it is listed.</span></li>
+            <li><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-check"/></svg><span><strong>Total transparency.</strong> Unedited video and the original lab report, before any commitment.</span></li>
+          </ul>
+          <div class="signature">
+            <img src="images/opt/founder-400.webp" alt="Shavindu, gemologist and founder of FACET" width="400" height="600" loading="lazy">
+            <div><strong>Shavindu</strong><span>Gemologist &amp; founder</span></div>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="footer-bottom">
-            <div class="footer-bottom-content">
-                <p>&copy; 2026 FACET. All Rights Reserved.</p>
-                <div class="payment-info" style="text-align: right;">
-                    <div class="local-payments"
-                        style="margin-bottom: 10px; font-size: 0.85rem; color: #fff; display: flex; gap: 15px; justify-content: flex-end; align-items: center;">
-                        <span><i class="fas fa-bolt" style="color: #00ffcc;"></i> Koko</span>
-                        <span><i class="fas fa-leaf" style="color: #ff3366;"></i> Mintpay</span>
-                        <span><i class="fas fa-percentage" style="color: var(--primary);"></i> 0% EMI Plans</span>
-                    </div>
-                    <div class="payment-icons">
-                        <i class="fab fa-cc-visa"></i>
-                        <i class="fab fa-cc-mastercard"></i>
-                        <i class="fab fa-cc-paypal"></i>
-                        <i class="fab fa-cc-amex"></i>
-                    </div>
-                </div>
-            </div>
+    <section class="section" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="section-head section-head--center" data-reveal>
+          <p class="eyebrow">Client stories</p>
+          <h2 id="reviews-title">Trusted by collectors worldwide</h2>
         </div>
-    </footer>
+        <div class="testimonials" data-reveal-group>
+          <figure class="quote-card" data-reveal>
+            <div class="stars" role="img" aria-label="Rated 5 out of 5"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-star"/></svg><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-star"/></svg><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-star"/></svg><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-star"/></svg><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-star"/></svg></div>
+            <blockquote><p>&ldquo;I was hesitant to buy online, but seeing the GIA certificate and the stone on video gave me confidence. The blue sapphire is stunning.&rdquo;</p></blockquote>
+            <figcaption><span class="avatar" aria-hidden="true">JW</span><span><strong>James Wilson</strong><span>London, United Kingdom</span></span></figcaption>
+          </figure>
+          <figure class="quote-card" data-reveal>
+            <div class="stars" role="img" aria-label="Rated 5 out of 5"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-star"/></svg><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-star"/></svg><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-star"/></svg><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-star"/></svg><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-star"/></svg></div>
+            <blockquote><p>&ldquo;The custom ring design was perfect, and it arrived in New York within five days by FedEx, fully insured.&rdquo;</p></blockquote>
+            <figcaption><span class="avatar" aria-hidden="true">MR</span><span><strong>Michael Ross</strong><span>New York, USA</span></span></figcaption>
+          </figure>
+          <figure class="quote-card" data-reveal>
+            <div class="stars" role="img" aria-label="Rated 5 out of 5"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-star"/></svg><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-star"/></svg><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-star"/></svg><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-star"/></svg><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-star"/></svg></div>
+            <blockquote><p>&ldquo;Honest sellers. They showed me the stone on a video call before I paid. Highly recommended.&rdquo;</p></blockquote>
+            <figcaption><span class="avatar" aria-hidden="true">SC</span><span><strong>Sophia Chen</strong><span>Singapore</span></span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
 
-    <!-- WhatsApp Float -->
-    <a href="https://wa.me/94711098429?text=Hello%20FACET!%20I%20would%20like%20to%20book%20a%20VIP%20consultation..."
-        class="whatsapp-float" target="_blank" rel="noopener noreferrer"
-        title="Skip the wait! Reach out via WhatsApp for immediate, personalized assistance">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <section class="section section--surface" aria-labelledby="journal-title">
+      <div class="container">
+        <div class="section-head section-head--split" data-reveal>
+          <div>
+            <p class="eyebrow">The FACET journal</p>
+            <h2 id="journal-title">Learn before you buy</h2>
+          </div>
+          <a class="link-arrow" href="blog.html">All articles <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-arrow"/></svg></a>
+        </div>
+        <div class="post-grid" data-reveal-group>
+          <article class="post-card" data-reveal>
+            <div class="post-card__media"><img src="images/opt/cat-gems-640.webp" srcset="images/opt/cat-gems-640.webp 640w, images/opt/cat-gems-960.webp 960w" sizes="(max-width: 700px) 100vw, 400px" alt="A vivid blue oval Ceylon sapphire" width="960" height="960" loading="lazy" decoding="async"></div>
+            <p class="post-card__meta"><span>Gem guide</span><time datetime="2025-10-12">12 October 2025</time></p>
+            <h3><a href="article-sapphire-guide.html">How to Choose the Perfect Ceylon Blue Sapphire</a></h3>
+            <p>Cornflower or royal blue? How colour, clarity, cut and treatment decide what a sapphire is really worth.</p>
+          </article>
+          <article class="post-card" data-reveal>
+            <div class="post-card__media"><img src="images/opt/certificate-480.webp" srcset="images/opt/certificate-480.webp 480w, images/opt/certificate-960.webp 960w" sizes="(max-width: 700px) 100vw, 400px" alt="A gemmological identification report" width="960" height="646" loading="lazy" decoding="async"></div>
+            <p class="post-card__meta"><span>Education</span><time datetime="2026-08-14">14 August 2026</time></p>
+            <h3><a href="article-certifications.html">Demystifying Gemstone Certifications</a></h3>
+            <p>What a gem lab report tells you, how to read one, and why a premium stone should never be bought without one.</p>
+          </article>
+          <article class="post-card" data-reveal>
+            <div class="post-card__media"><img src="images/opt/source-river-900.webp" srcset="images/opt/source-river-900.webp 900w" sizes="(max-width: 700px) 100vw, 400px" alt="A gem miner panning river gravel in Ratnapura" width="900" height="600" loading="lazy" decoding="async"></div>
+            <p class="post-card__meta"><span>Industry insights</span><time datetime="2026-01-05">5 January 2026</time></p>
+            <h3><a href="article-ethical-mining.html">The Ethical Mining Heritage of Ratnapura</a></h3>
+            <p>Why Sri Lanka&#x27;s small-scale, hand-worked gem pits are among the most sustainable in the world.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <script>
-        // Hero Slider Logic (page-specific – stays inline)
-        const slides = document.querySelectorAll('.hero-slide');
-        let currentSlide = 0;
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container container--narrow">
+        <div class="section-head section-head--center" data-reveal>
+          <p class="eyebrow">Questions</p>
+          <h2 id="faq-title">Buying with confidence</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Is it safe to buy a gemstone online from Sri Lanka?<svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-plus"/></svg></summary>
+            <div><p>Yes, and we make it verifiable. Before you pay, we show you the actual stone on a live video call in natural light, together with its original gem lab report. Every parcel is shipped fully insured with tracking, and you are covered by our 14-day money-back guarantee.</p></div>
+          </details>
+          <details>
+            <summary>Are your gems natural and certified?<svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-plus"/></svg></summary>
+            <div><p>Every stone we sell is natural and comes with a gemmological report. For premium stones we provide reports from internationally recognised laboratories such as NGJA (Sri Lanka), GIA or GRS. The report for each stone is shown in its listing and on request before purchase.</p></div>
+          </details>
+          <details>
+            <summary>How does international shipping work?<svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-plus"/></svg></summary>
+            <div><p>We ship worldwide with FedEx or DHL, fully insured and tracked door to door, including to the USA, UK, Europe, the Middle East and Asia. Import duties and taxes in your country, if any, are payable on delivery.</p></div>
+          </details>
+          <details>
+            <summary>What is your return policy?<svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-plus"/></svg></summary>
+            <div><p>If a stone does not match its description, return it within 14 days of delivery in its original condition, with its report, for a full refund. See our <a class="gold" href="policies.html#returns">returns policy</a> for details.</p></div>
+          </details>
+          <details>
+            <summary>How can I pay?<svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-plus"/></svg></summary>
+            <div><p>International clients pay by bank transfer or card. In Sri Lanka you can also spread the cost with Koko or Mintpay instalment plans. Payment is only requested after you have seen the stone and agreed the final price.</p></div>
+          </details>
+          <details>
+            <summary>Can you set a stone into a custom piece of jewellery?<svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-plus"/></svg></summary>
+            <div><p>Yes. Our goldsmiths in Sri Lanka handcraft rings, pendants and earrings in gold or silver around the stone you choose. Share your idea on WhatsApp and we will send design sketches and a quote.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
 
-        function nextSlide() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-        setInterval(nextSlide, 7000);
-    </script>
-    <script src="main.js"></script>
+    <section class="section">
+      <div class="container">
+        <div class="cta-band" data-reveal>
+          <div>
+            <p class="eyebrow">Private consultation</p>
+            <h2>Book a private viewing</h2>
+            <p>See our stones in person at our World Trade Center suite in Colombo, or join a live video viewing from anywhere in the world. One-to-one with our gemologist, with no obligation to buy.</p>
+            <div class="cta-band__meta">
+              <span><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-calendar"/></svg> By appointment</span>
+              <span><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-pin"/></svg> WTC, Colombo 01</span>
+              <span><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-video"/></svg> Or by live video, worldwide</span>
+            </div>
+          </div>
+          <div class="cta-band__actions">
+            <a class="btn btn--wa btn--block" href="https://wa.me/94711098429?text=Hello%20FACET%21%20I%20would%20like%20to%20book%20a%20private%20viewing." target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-whatsapp"/></svg> Book on WhatsApp</a>
+            <a class="btn btn--ghost btn--block" href="contact.html?interest=private-viewing">Send an inquiry <svg class="icon icon--arrow" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="brand" href="index.html" aria-label="FACET Fine Jewelry — home">
+            <img src="images/opt/logo-mark.webp" alt="" width="30" height="39" loading="lazy">
+            <span class="brand__name"><strong>FACET</strong><span>Fine Jewelry</span></span>
+          </a>
+          <p>Natural Ceylon gemstones and handcrafted fine jewellery, hand-selected in Ratnapura by our founding gemologist and delivered fully insured worldwide.</p>
+          <p class="secure-note"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-lock"/></svg> Lab-reported stones &middot; secure payments</p>
+        </div>
+        <div>
+          <h2>Shop</h2>
+          <ul role="list">
+            <li><a href="all-gems.html">Loose Ceylon gems</a></li>
+            <li><a href="all-gems.html?type=blue">Blue sapphires</a></li>
+            <li><a href="jewellery.html">Fine jewellery</a></li>
+            <li><a href="contact.html?interest=custom-jewellery">Bespoke design</a></li>
+            <li><a href="contact.html?interest=private-viewing">Private viewing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Customer care</h2>
+          <ul role="list">
+            <li><a href="index.html#how-it-works">How buying works</a></li>
+            <li><a href="policies.html#shipping">Shipping &amp; delivery</a></li>
+            <li><a href="policies.html#returns">14-day money-back guarantee</a></li>
+            <li><a href="policies.html#certification">Certification</a></li>
+            <li><a href="policies.html#privacy">Privacy</a></li>
+            <li><a href="blog.html">Journal</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Contact</h2>
+          <ul role="list" class="footer-contact">
+            <li><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-whatsapp"/></svg><a href="https://wa.me/94711098429?text=Hello%20FACET%21" target="_blank" rel="noopener">WhatsApp +94 71 109 8429</a></li>
+            <li><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-phone"/></svg><a href="tel:+94711098429">+94 71 109 8429</a></li>
+            <li><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-mail"/></svg><a href="mailto:sales@gemcity.lk">sales@gemcity.lk</a></li>
+            <li><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-pin"/></svg><span>World Trade Center, Colombo 01<br>Private viewings by appointment</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span data-year>2026</span> FACET Fine Jewelry &middot; gemcity.lk</p>
+        <ul class="payments" role="list" aria-label="Accepted payment methods">
+          <li>Bank transfer</li><li>Visa</li><li>Mastercard</li><li>Amex</li><li>PayPal</li><li>Koko</li><li>Mintpay</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <a class="wa-fab" href="https://wa.me/94711098429?text=Hello%20FACET%21%20I%20have%20a%20question." target="_blank" rel="noopener" aria-label="Chat with our gemologist on WhatsApp">
+    <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#i-whatsapp"/></svg><span class="wa-fab__label">Chat with a gemologist</span><span class="wa-fab__online" aria-hidden="true"></span>
+  </a>
 </body>
-
 </html>
